@@ -1,0 +1,18 @@
+<div className="world-container">
+
+    <div
+        className="world-map"
+        style={{
+            transform:
+            `translate(${x}px, ${y}px)
+             scale(${zoom})`
+        }}
+    >
+
+        <MapRegion
+            region={region}
+        />
+
+    </div>
+
+</div>

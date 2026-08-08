@@ -1,0 +1,205 @@
+.lore-background {
+
+    position: relative;
+
+    min-height: 100vh;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(212,175,55,0.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom,
+            rgba(50,80,180,0.18),
+            transparent 45%
+        ),
+        linear-gradient(
+            180deg,
+            #050816,
+            #02030a
+        );
+
+    color: white;
+
+}
+
+
+/* Camada de estrelas */
+
+.lore-stars {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            white 1px,
+            transparent 1px
+        );
+
+    background-size: 80px 80px;
+
+    opacity: .35;
+
+    animation: starsMove 80s linear infinite;
+
+}
+
+
+/* Nebulosa */
+
+.lore-nebula {
+
+    position: absolute;
+
+    width: 900px;
+
+    height: 900px;
+
+    top: -300px;
+
+    right: -250px;
+
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(90,120,255,.25),
+            transparent 65%
+        );
+
+
+    filter: blur(60px);
+
+
+    animation: nebulaFloat 18s ease-in-out infinite alternate;
+
+}
+
+
+
+/* Luz dourada dos fragmentos */
+
+.lore-light {
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+
+    bottom: -250px;
+
+    left: -150px;
+
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(212,175,55,.18),
+            transparent 70%
+        );
+
+
+    filter: blur(50px);
+
+
+    animation: lightPulse 10s infinite alternate;
+
+}
+
+
+
+
+/* Conteúdo */
+
+.lore-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    padding: 40px 20px;
+
+}
+
+
+
+
+
+/* Animações */
+
+
+@keyframes starsMove {
+
+
+    from {
+
+        transform: translateY(0);
+
+    }
+
+
+    to {
+
+        transform: translateY(200px);
+
+    }
+
+}
+
+
+
+@keyframes nebulaFloat {
+
+
+    from {
+
+        transform: translate(0,0);
+
+    }
+
+
+    to {
+
+        transform: translate(-80px,60px);
+
+    }
+
+}
+
+
+
+@keyframes lightPulse {
+
+
+    from {
+
+        opacity: .5;
+
+        transform: scale(1);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform: scale(1.2);
+
+    }
+
+}

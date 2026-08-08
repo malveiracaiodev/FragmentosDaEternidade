@@ -1,0 +1,411 @@
+/* =====================================
+   PÁGINA PRINCIPAL DA HISTÓRIA
+===================================== */
+
+.story-page-container {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    padding: 40px 20px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background: radial-gradient(
+        circle at top,
+        #123047,
+        #05080d 70%
+    );
+    color: white;
+}
+
+/* =====================================
+   CABEÇALHO DO GUIA
+===================================== */
+
+.chapter-guide-header {
+    width: 100%;
+    max-width: 900px;
+    text-align: left;
+}
+
+.chapter-guide-header h1 {
+    margin: 0 0 10px;
+    font-size: 2.2rem;
+    color: white;
+}
+
+.chapter-guide-header p {
+    margin: 0;
+    color: #9adfff;
+}
+
+/* =====================================
+   GRID DE CAPÍTULOS
+===================================== */
+
+.chapters-grid {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(260px, 1fr)
+    );
+    gap: 20px;
+}
+
+/* =====================================
+   CARD CAPÍTULO
+===================================== */
+
+.chapter-select-card {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 25px;
+    box-sizing: border-box;
+    backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.chapter-select-card:hover {
+    border-color: cyan;
+    transform: translateY(-4px);
+    box-shadow: 0 5px 20px rgba(0, 255, 255, 0.15);
+}
+
+.chapter-number {
+    color: cyan;
+    font-size: 0.85rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.chapter-select-card h2 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.chapter-select-card p {
+    margin: 0;
+    color: #ccc;
+    line-height: 1.5;
+}
+
+.play-chapter-btn {
+    width: max-content;
+    padding: 10px 20px;
+    border-radius: 25px;
+    border: 1px solid cyan;
+    background: rgba(0, 255, 255, 0.15);
+    color: cyan;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.play-chapter-btn:hover {
+    background: cyan;
+    color: #05080d;
+}
+
+/* =====================================
+   LEITOR DE CAPÍTULO
+===================================== */
+
+.chapter-reader-wrapper {
+    width: 100%;
+    min-height: calc(100vh - 70px);
+    padding: 30px 20px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    background: radial-gradient(
+        circle at top,
+        #123047,
+        #05080d 70%
+    );
+}
+
+/* =====================================
+   BOTÃO VOLTAR
+===================================== */
+
+.back-to-guide-btn {
+    width: max-content;
+    align-self: flex-start;
+    margin-left: max(
+        0px,
+        calc((100% - 900px) / 2)
+    );
+    margin-bottom: 20px;
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    color: #9adfff;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: 0.2s ease;
+}
+
+.back-to-guide-btn:hover {
+    background: rgba(0, 255, 255, 0.15);
+    border-color: cyan;
+    color: white;
+}
+
+/* =====================================
+   CHAPTER VIEWER
+===================================== */
+
+.chapter-viewer {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    box-sizing: border-box;
+}
+
+.chapter-card {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+}
+
+.chapter-header {
+    width: 100%;
+    overflow-wrap: break-word;
+}
+
+.chapter-label {
+    color: cyan;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.chapter-header h1 {
+    margin: 10px 0;
+    font-size: 2rem;
+}
+
+.chapter-header p {
+    color: #9adfff;
+    line-height: 1.6;
+}
+
+.error-card {
+    text-align: center;
+}
+
+/* =====================================
+   ESTILIZAÇÃO DOS TEXTOS DA CUTSCENE (COMPACTO E DESTACADO)
+===================================== */
+
+.chapter-reader-wrapper p,
+.chapter-viewer p,
+.scene-viewer p,
+.cutscene-text-container p,
+.scene-text-content p,
+.cutscene-description p {
+    width: 100% !important;
+    max-width: 800px !important;
+    margin: 10px auto !important;
+    font-size: 1.25rem !important;
+    line-height: 1.45 !important;
+    color: #e0f4ff !important;
+    text-align: center !important;
+    font-weight: 400 !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+    display: block !important;
+}
+
+.chapter-reader-wrapper h2,
+.chapter-reader-wrapper h3,
+.chapter-viewer h2,
+.chapter-viewer h3,
+.scene-viewer h2,
+.scene-viewer h3 {
+    text-align: center !important;
+    color: cyan !important;
+    font-size: 1.5rem !important;
+    margin: 15px auto 8px auto !important;
+    letter-spacing: 1px !important;
+}
+
+/* =====================================
+   CONTROLES DE CENA (BOTÕES ANTERIOR / PRÓXIMA)
+===================================== */
+
+.scene-viewer {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scene-controls {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    box-sizing: border-box;
+}
+
+/* Joga o botão para a direita caso não haja botão esquerdo */
+.scene-controls:has(.scene-button.next:only-child) {
+    justify-content: flex-end;
+}
+
+.scene-button {
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    background: rgba(0, 255, 255, 0.1);
+    color: cyan;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.scene-button:hover {
+    background: cyan;
+    color: #05080d;
+    border-color: cyan;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.3);
+}
+
+.scene-button.previous {
+    border-color: rgba(255, 255, 255, 0.2);
+    color: #9adfff;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.scene-button.previous:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    border-color: white;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.15);
+}
+
+/* =====================================
+   BOTÃO DE DESBLOQUEIO DE CONTEÚDO
+===================================== */
+
+.unlock-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.unlock-button {
+    padding: 12px 24px;
+    border-radius: 20px;
+    border: 1px dashed cyan;
+    background: rgba(0, 255, 255, 0.08);
+    color: cyan;
+    font-weight: bold;
+    font-size: 0.95rem;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.unlock-button:hover:not(:disabled) {
+    background: rgba(0, 255, 255, 0.2);
+    border-style: solid;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.25);
+}
+
+.unlock-button.unlocked {
+    background: rgba(0, 255, 128, 0.15);
+    border: 1px solid #00ff80;
+    color: #00ff80;
+    border-style: solid;
+    cursor: default;
+    box-shadow: 0 0 15px rgba(0, 255, 128, 0.2);
+}
+
+.unlock-button:disabled {
+    opacity: 0.85;
+    cursor: not-allowed;
+}
+
+/* =====================================
+   RESPONSIVO
+===================================== */
+
+@media (max-width: 768px) {
+    .story-page-container {
+        padding: 30px 15px 50px;
+    }
+
+    .chapter-guide-header h1 {
+        font-size: 1.7rem;
+    }
+
+    .chapters-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chapter-reader-wrapper {
+        padding: 20px 15px 50px;
+    }
+
+    .back-to-guide-btn {
+        margin-left: 0;
+    }
+
+    .chapter-viewer {
+        max-width: 100%;
+    }
+
+    .chapter-card {
+        padding: 20px;
+    }
+
+    .chapter-header h1 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 450px) {
+    .chapter-select-card {
+        padding: 20px;
+    }
+
+    .chapter-select-card h2 {
+        font-size: 1.2rem;
+    }
+}

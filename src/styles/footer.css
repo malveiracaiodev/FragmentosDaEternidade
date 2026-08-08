@@ -1,0 +1,43 @@
+.footer {
+
+    padding: 60px 20px;
+
+    background: #05070f;
+
+    border-top: 1px solid rgba(212,175,55,.2);
+
+}
+
+.footer-content{
+
+    max-width:1200px;
+
+    margin:auto;
+
+    text-align:center;
+
+}
+
+.footer h3{
+
+    color:white;
+
+    margin-bottom:15px;
+
+}
+
+.footer p{
+
+    color:#b8b8b8;
+
+    margin-bottom:25px;
+
+}
+
+.footer span{
+
+    color:#777;
+
+    font-size:.9rem;
+
+}

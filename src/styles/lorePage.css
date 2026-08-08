@@ -1,0 +1,580 @@
+/* ==========================================
+   LORE PAGE
+   Fragmentos da Eternidade
+========================================== */
+
+
+.lore-page {
+
+    width:100%;
+
+    max-width:1100px;
+
+
+    margin:80px auto;
+
+
+    padding:50px;
+
+
+
+    background:
+
+        rgba(10,14,30,.75);
+
+
+
+    backdrop-filter:
+
+        blur(12px);
+
+
+
+    border:
+
+        1px solid
+
+        rgba(212,175,55,.25);
+
+
+
+    border-radius:24px;
+
+
+
+    box-shadow:
+
+        0 0 40px rgba(0,0,0,.55),
+
+        inset 0 0 40px rgba(212,175,55,.05);
+
+
+
+    animation:
+
+        loreAppear .8s ease;
+
+}
+
+
+
+
+
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+
+.lore-header {
+
+
+    text-align:center;
+
+
+}
+
+
+
+
+.lore-header h1 {
+
+
+    font-size:3rem;
+
+
+    margin-bottom:25px;
+
+
+    font-weight:700;
+
+
+    letter-spacing:3px;
+
+
+    color:#d4af37;
+
+
+
+    text-shadow:
+
+        0 0 20px rgba(212,175,55,.35);
+
+
+}
+
+
+
+
+
+
+
+.lore-header p {
+
+
+    max-width:700px;
+
+
+    margin:
+
+        0 auto;
+
+
+    color:
+
+        rgba(255,255,255,.75);
+
+
+
+    font-size:1.2rem;
+
+
+    line-height:1.8;
+
+
+}
+
+
+
+
+
+
+
+.lore-page::before {
+
+
+    content:"";
+
+
+    display:block;
+
+
+    width:120px;
+
+
+    height:2px;
+
+
+    margin:
+
+        0 auto 35px;
+
+
+
+    background:
+
+
+        linear-gradient(
+
+            90deg,
+
+            transparent,
+
+            #d4af37,
+
+            transparent
+
+        );
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   CHARACTER CATALOG
+========================================== */
+
+
+.characters-grid {
+
+
+    margin-top:50px;
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+
+        repeat(
+
+            auto-fit,
+
+            minmax(260px,1fr)
+
+        );
+
+
+    gap:30px;
+
+
+}
+
+
+
+
+
+
+
+
+
+/*
+   CARD COMPLETO CLICÁVEL
+*/
+
+
+.character-grid-card {
+
+
+    display:block;
+
+
+    text-decoration:none;
+
+
+    color:inherit;
+
+
+    cursor:pointer;
+
+
+    overflow:hidden;
+
+
+    border-radius:18px;
+
+
+    background:
+
+
+        rgba(15,18,28,.85);
+
+
+
+    border:
+
+
+        1px solid
+
+        rgba(212,175,55,.25);
+
+
+
+    transition:
+
+        transform .3s ease,
+
+        border-color .3s ease,
+
+        box-shadow .3s ease;
+
+
+}
+
+
+
+
+
+
+
+.character-grid-card:hover {
+
+
+    transform:
+
+        translateY(-8px);
+
+
+
+    border-color:
+
+        rgba(212,175,55,.8);
+
+
+
+    box-shadow:
+
+
+        0 0 35px
+
+        rgba(212,175,55,.25);
+
+
+}
+
+
+
+
+
+
+
+
+/* ==========================================
+   VIDEO / IMAGEM
+========================================== */
+
+
+.character-grid-image {
+
+
+    width:100%;
+
+
+    height:330px;
+
+
+    object-fit:cover;
+
+
+    display:block;
+
+
+    transition:
+
+        transform .5s ease;
+
+
+}
+
+
+
+
+
+
+
+.character-grid-card:hover .character-grid-image {
+
+
+    transform:
+
+        scale(1.05);
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   TEXTO DO CARD
+========================================== */
+
+
+.character-grid-card h2 {
+
+
+    margin:
+
+        20px 20px 5px;
+
+
+
+    color:#fff;
+
+
+    font-size:1.8rem;
+
+
+}
+
+
+
+
+
+
+
+
+.character-grid-card h3 {
+
+
+    margin:
+
+        0 20px 15px;
+
+
+
+    color:#d4af37;
+
+
+    font-size:1rem;
+
+
+    font-weight:400;
+
+
+}
+
+
+
+
+
+
+
+
+.character-grid-card p {
+
+
+    margin:
+
+
+        0 20px 25px;
+
+
+
+    color:#ccc;
+
+
+    line-height:1.7;
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+
+@keyframes loreAppear {
+
+
+    from {
+
+
+        opacity:0;
+
+
+        transform:
+
+            translateY(30px);
+
+
+    }
+
+
+
+    to {
+
+
+        opacity:1;
+
+
+        transform:
+
+            translateY(0);
+
+
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+
+@media(max-width:700px){
+
+
+
+    .lore-page {
+
+
+        margin:
+
+            60px 15px;
+
+
+
+        padding:
+
+            30px 20px;
+
+
+    }
+
+
+
+
+
+
+    .lore-header h1 {
+
+
+        font-size:2.2rem;
+
+
+    }
+
+
+
+
+
+
+    .lore-header p {
+
+
+        font-size:1rem;
+
+
+    }
+
+
+
+
+
+
+    .characters-grid {
+
+
+        grid-template-columns:
+
+            1fr;
+
+
+    }
+
+
+
+
+
+
+    .character-grid-image {
+
+
+        height:300px;
+
+
+    }
+
+
+}

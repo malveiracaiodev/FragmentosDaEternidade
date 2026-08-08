@@ -1,0 +1,21 @@
+# Dependências
+node_modules/
+
+# Build
+dist/
+dist-ssr/
+
+# Arquivos locais
+.env
+.env.local
+.env.*.local
+*.local
+
+# Cópia desnecessária do Firebase
+src/firebase/firebasecode.txt
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store

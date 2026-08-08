@@ -1,0 +1,458 @@
+/* =====================================
+   CONTAINER PRINCIPAL
+===================================== */
+
+.profile-container {
+    width: 100%;
+    min-height: 100vh;
+    padding-top: 110px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    overflow-x: hidden;
+    background: radial-gradient(
+        circle at top,
+        #123047,
+        #05080d 70%
+    );
+    color: white;
+    box-sizing: border-box;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #05080d;
+}
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 255, 0.3);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 255, 0.6);
+}
+
+/* =====================================
+   LOADING
+===================================== */
+
+.profile-loading {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: cyan;
+    font-size: 1.5rem;
+    background: #05080d;
+}
+
+/* =====================================
+   HEADER PERFIL
+===================================== */
+
+.profile-header {
+    width: 100%;
+    max-width: 900px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+    transition: border-color 0.3s ease;
+}
+
+.profile-header:hover {
+    border-color: rgba(0, 255, 255, 0.5);
+}
+
+.profile-avatar {
+    width: 130px;
+    height: 130px;
+    min-width: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+        135deg,
+        cyan,
+        #003b55
+    );
+    border: 3px solid cyan;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.profile-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-avatar span {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #05080d;
+}
+
+.profile-info {
+    min-width: 0;
+}
+
+.profile-info h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.profile-info p {
+    color: #9adfff;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.player-title {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 8px 15px;
+    border-radius: 20px;
+    color: cyan;
+    background: rgba(0, 255, 255, 0.15);
+    font-size: 0.9rem;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+/* =====================================
+   CARDS
+===================================== */
+
+.profile-card {
+    width: 100%;
+    max-width: 900px;
+    padding: 30px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 25px;
+    backdrop-filter: blur(12px);
+    transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.profile-card:hover {
+    border-color: rgba(0, 255, 255, 0.4);
+}
+
+.profile-card h2 {
+    margin-top: 0;
+    color: #8befff;
+    font-size: 1.4rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+/* =====================================
+   JORNADA
+===================================== */
+
+.chapter-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chapter-info strong {
+    color: white;
+}
+
+.chapter-info span {
+    color: #9adfff;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 18px;
+    margin-top: 20px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 20px;
+    background: linear-gradient(
+        90deg,
+        cyan,
+        #0077ff
+    );
+    transition: width 0.5s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.profile-card small {
+    display: block;
+    margin-top: 8px;
+    color: #9adfff;
+    text-align: right;
+}
+
+/* =====================================
+   COLEÇÃO
+===================================== */
+
+.stats-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(160px, 1fr)
+    );
+    gap: 20px;
+}
+
+.stats-grid article {
+    min-height: 120px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 18px;
+    box-sizing: border-box;
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.stats-grid article:hover {
+    background: rgba(0, 255, 255, 0.1);
+    border-color: cyan;
+    transform: translateY(-3px);
+}
+
+/* Destaque visual caso o valor seja 0 (vazio) ou maior que 0 */
+.stats-grid article strong[data-value="0"],
+.stats-grid article strong:empty {
+    opacity: 0.4;
+}
+
+.stats-grid span {
+    color: #9adfff;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.stats-grid strong {
+    font-size: 2rem;
+    color: cyan;
+}
+
+/* =====================================
+   SIMBOLOS
+===================================== */
+
+.symbols-section {
+    margin-top: 0;
+}
+
+.symbols-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(280px, 1fr)
+    );
+    gap: 20px;
+}
+
+.symbol-item {
+    width: 100%;
+    min-height: 170px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+
+.symbol-item:hover {
+    transform: translateY(-3px);
+}
+
+.symbol-item img {
+    width: 100px;
+    height: 100px;
+    min-width: 100px;
+    max-width: 100px;
+    object-fit: contain;
+}
+
+.symbol-item h3 {
+    margin: 0 0 8px;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.symbol-item p {
+    margin: 0 0 8px;
+    font-size: 0.85rem;
+    color: #ccc;
+    line-height: 1.3;
+}
+
+.symbol-item span {
+    font-size: 0.75rem;
+    color: #9adfff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.symbol-item.unlocked {
+    background: rgba(0, 255, 255, 0.08);
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.05);
+}
+
+.symbol-item.locked {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed rgba(255, 255, 255, 0.15);
+    opacity: 0.5;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.1rem;
+}
+
+/* =====================================
+   LISTA DE DESBLOQUEIOS
+===================================== */
+
+.unlock-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.unlock-list li {
+    padding: 15px 20px;
+    border-radius: 15px;
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.unlock-list li:hover {
+    background: rgba(0, 255, 255, 0.1);
+    border-color: rgba(0, 255, 255, 0.3);
+}
+
+/* =====================================
+   FUTURO
+===================================== */
+
+.future-grid {
+    display: grid;
+    grid-template-columns: repeat(
+        auto-fit,
+        minmax(180px, 1fr)
+    );
+    gap: 20px;
+}
+
+.future-grid div {
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.future-grid div:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(0, 255, 255, 0.2);
+}
+
+.future-grid span {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #9adfff;
+}
+
+/* =====================================
+   RESPONSIVIDADE (TABLET)
+===================================== */
+
+@media(max-width: 700px) {
+    .profile-container {
+        padding-top: 90px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-avatar {
+        width: 110px;
+        height: 110px;
+        min-width: 110px;
+    }
+
+    .profile-card {
+        padding: 20px;
+    }
+
+    .symbol-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-info h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* =====================================
+   RESPONSIVIDADE (CELULAR PEQUENO)
+===================================== */
+
+@media(max-width: 400px) {
+    .profile-card {
+        padding: 15px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .symbols-grid {
+        grid-template-columns: 1fr;
+    }
+}

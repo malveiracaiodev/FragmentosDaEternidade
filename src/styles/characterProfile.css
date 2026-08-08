@@ -1,0 +1,787 @@
+/* ==========================================
+   CHARACTER PROFILE
+   Fragmentos da Eternidade - Lore System
+========================================== */
+
+
+.character-profile {
+
+    max-width: 1200px;
+
+    margin: 120px auto 60px;
+
+    padding: 30px;
+
+    color: #ffffff;
+
+    animation: profileEnter .8s ease;
+
+}
+
+
+
+@keyframes profileEnter {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+
+
+
+/* ==========================================
+   BANNER
+========================================== */
+
+
+.character-banner {
+
+    position: relative;
+
+    width:100%;
+
+    height:360px;
+
+    overflow:hidden;
+
+    border-radius:20px;
+
+    margin-bottom:40px;
+
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #111827,
+            #050505
+        );
+
+
+    border:
+
+        1px solid
+
+        rgba(184,148,59,.35);
+
+}
+
+
+
+.character-banner img {
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+
+.banner-placeholder {
+
+    width:100%;
+
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    color:#777;
+
+    font-size:1.2rem;
+
+}
+
+
+
+.banner-overlay {
+
+    position:absolute;
+
+    inset:0;
+
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-end;
+
+
+    padding:40px;
+
+
+    background:
+
+        linear-gradient(
+            transparent,
+            rgba(0,0,0,.85)
+        );
+
+}
+
+
+
+.banner-overlay h1 {
+
+    margin:0;
+
+    font-size:3rem;
+
+    letter-spacing:3px;
+
+}
+
+
+
+.banner-overlay h2 {
+
+    margin-top:10px;
+
+    color:#d4af37;
+
+    font-weight:400;
+
+}
+
+
+
+
+
+/* ==========================================
+   HEADER
+========================================== */
+
+
+.character-header {
+
+    display:flex;
+
+    gap:40px;
+
+    align-items:center;
+
+    margin-bottom:40px;
+
+}
+
+
+
+
+.character-image {
+
+    width:280px;
+
+    height:380px;
+
+    border-radius:18px;
+
+    overflow:hidden;
+
+    flex-shrink:0;
+
+
+    border:
+
+        2px solid
+
+        rgba(184,148,59,.5);
+
+
+    background:#111;
+
+
+    box-shadow:
+
+        0 0 25px
+
+        rgba(184,148,59,.15);
+
+
+    transition:.3s;
+
+}
+
+
+
+
+.character-image:hover {
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+        0 0 35px
+
+        rgba(184,148,59,.35);
+
+}
+
+
+
+
+.character-image img {
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+/* ==========================================
+   CALEB IMAGE ANIMATION
+========================================== */
+
+
+.character-portrait {
+
+    animation:
+
+        calebBreathing 4s ease-in-out infinite;
+
+
+    filter:
+
+        drop-shadow(
+            0 0 20px
+            rgba(0,200,255,.25)
+        );
+
+}
+
+
+
+
+@keyframes calebBreathing {
+
+
+    0% {
+
+        transform:
+
+            translateY(0)
+            scale(1);
+
+    }
+
+
+    50% {
+
+        transform:
+
+            translateY(-8px)
+            scale(1.015);
+
+    }
+
+
+    100% {
+
+        transform:
+
+            translateY(0)
+            scale(1);
+
+    }
+
+
+}
+
+
+
+
+
+.character-placeholder {
+
+    height:100%;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    text-align:center;
+
+    color:#888;
+
+    padding:20px;
+
+}
+
+
+
+
+
+.character-introduction {
+
+    flex:1;
+
+}
+
+
+
+.character-introduction h1 {
+
+    font-size:3rem;
+
+    margin:0 0 10px;
+
+}
+
+
+
+.character-introduction h2 {
+
+    color:#d4af37;
+
+    font-weight:400;
+
+    margin-bottom:25px;
+
+}
+
+
+
+.character-summary {
+
+    line-height:1.8;
+
+    color:#d0d0d0;
+
+    font-size:1.1rem;
+
+}
+
+
+
+
+
+/* ==========================================
+   CARDS
+========================================== */
+
+
+.character-card {
+
+    margin-top:35px;
+
+    padding:30px;
+
+
+    background:
+
+        rgba(15,18,28,.75);
+
+
+    backdrop-filter:
+
+        blur(12px);
+
+
+
+    border-radius:18px;
+
+
+    border:
+
+        1px solid
+
+        rgba(184,148,59,.25);
+
+
+
+    box-shadow:
+
+        0 15px 40px
+
+        rgba(0,0,0,.35);
+
+
+
+    animation:
+
+        cardEnter .6s ease;
+
+}
+
+
+
+
+
+@keyframes cardEnter {
+
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+
+}
+
+
+
+
+.character-card h2 {
+
+
+    color:#d4af37;
+
+
+    margin-top:0;
+
+
+    padding-bottom:12px;
+
+
+    border-bottom:
+
+        1px solid
+
+        rgba(184,148,59,.3);
+
+
+}
+
+
+
+
+.character-card p {
+
+    line-height:1.9;
+
+    color:#ddd;
+
+}
+
+
+
+
+
+/* ==========================================
+   DETAILS
+========================================== */
+
+
+.character-details {
+
+
+    display:grid;
+
+
+    grid-template-columns:
+
+        repeat(
+
+            auto-fit,
+
+            minmax(220px,1fr)
+
+        );
+
+
+    gap:15px;
+
+}
+
+
+
+
+
+.character-detail {
+
+
+    display:flex;
+
+    justify-content:space-between;
+
+
+    padding:15px;
+
+
+    border-radius:12px;
+
+
+    background:
+
+        rgba(255,255,255,.04);
+
+
+    border:
+
+        1px solid
+
+        rgba(255,255,255,.08);
+
+
+}
+
+
+
+
+.character-detail span {
+
+    color:#aaa;
+
+}
+
+
+
+
+.character-detail strong {
+
+    color:white;
+
+}
+
+
+
+
+
+/* ==========================================
+   LISTAS
+========================================== */
+
+
+.character-card ul {
+
+    padding-left:25px;
+
+}
+
+
+
+
+.character-card li {
+
+    margin-bottom:10px;
+
+    color:#ddd;
+
+}
+
+
+
+.character-card li::marker {
+
+    color:#d4af37;
+
+}
+
+
+
+
+
+/* ==========================================
+   ABILITIES
+========================================== */
+
+
+.ability-group {
+
+    margin-bottom:25px;
+
+}
+
+
+
+
+.ability-group h3 {
+
+    color:white;
+
+    margin-bottom:10px;
+
+}
+
+
+
+
+
+/* ==========================================
+   FRASES
+========================================== */
+
+
+blockquote {
+
+
+    margin:15px 0;
+
+
+    padding:20px;
+
+
+    border-left:
+
+        3px solid
+
+        #d4af37;
+
+
+
+    background:
+
+        rgba(212,175,55,.08);
+
+
+    font-style:italic;
+
+
+    color:#eee;
+
+
+}
+
+
+
+
+
+/* ==========================================
+   RESPONSIVO
+========================================== */
+
+
+@media(max-width:900px){
+
+
+    .character-profile {
+
+        padding:20px;
+
+    }
+
+
+
+    .character-banner {
+
+        height:280px;
+
+    }
+
+
+
+    .banner-overlay h1 {
+
+        font-size:2rem;
+
+    }
+
+
+
+    .character-header {
+
+        flex-direction:column;
+
+        align-items:center;
+
+        text-align:center;
+
+    }
+
+
+
+    .character-image {
+
+        width:230px;
+
+        height:320px;
+
+    }
+
+
+
+    .character-introduction h1 {
+
+        font-size:2.2rem;
+
+    }
+
+
+}
+
+
+
+
+
+@media(max-width:500px){
+
+
+    .character-profile {
+
+        margin-top:100px;
+
+        padding:15px;
+
+    }
+
+
+
+    .character-banner {
+
+        height:220px;
+
+    }
+
+
+
+    .character-card {
+
+        padding:20px;
+
+    }
+
+
+
+    .character-detail {
+
+        flex-direction:column;
+
+        gap:5px;
+
+    }
+
+
+}

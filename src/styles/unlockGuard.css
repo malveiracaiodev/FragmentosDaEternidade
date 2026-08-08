@@ -1,0 +1,57 @@
+.unlock-locked {
+
+    max-width: 700px;
+
+    margin: 120px auto;
+
+    padding: 40px;
+
+    text-align: center;
+
+    color: white;
+
+    background:
+    rgba(10,14,25,.85);
+
+    border:
+
+    1px solid rgba(184,148,59,.35);
+
+    border-radius: 16px;
+
+    box-shadow:
+
+    0 0 30px rgba(0,0,0,.5);
+
+}
+
+
+.unlock-locked h2 {
+
+    color:#d4af37;
+
+    margin-bottom:20px;
+
+}
+
+
+.unlock-locked p {
+
+    color:#ddd;
+
+    line-height:1.7;
+
+}
+
+
+.unlock-locked span {
+
+    display:block;
+
+    margin-top:20px;
+
+    color:#999;
+
+    font-size:.9rem;
+
+}

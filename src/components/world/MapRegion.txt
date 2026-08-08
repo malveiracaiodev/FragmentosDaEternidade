@@ -1,0 +1,22 @@
+{
+ id:"ilha-caleb",
+
+ name:"Ilha de Caleb",
+
+ position:{
+    x:450,
+    y:320
+ },
+
+ unlocked:false,
+
+ description:
+ "Uma ilha isolada onde os fragmentos começaram a despertar.",
+
+
+chapterFound:1,
+
+
+mainEvent:
+"O primeiro fragmento foi encontrado."
+}

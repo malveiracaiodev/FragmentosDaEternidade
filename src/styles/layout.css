@@ -1,0 +1,79 @@
+/* ================================
+   LAYOUT PRINCIPAL
+================================ */
+
+.main-layout {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    background-color: #060811;
+
+    overflow-x: hidden;
+}
+
+
+/* ================================
+   ÁREA DAS PÁGINAS (OUTLET)
+================================ */
+
+.page-content {
+    flex: 1;
+
+    width: 100%;
+    min-width: 0;
+
+    display: block;
+
+    position: relative;
+
+    overflow-x: hidden;
+}
+
+
+/* ================================
+   GARANTE QUE PÁGINAS INTERNAS
+   NÃO QUEBREM O LAYOUT
+================================ */
+
+.page-content > * {
+    width: 100%;
+    max-width: 100%;
+}
+
+
+/* ================================
+   CONTAINERS GERAIS
+================================ */
+
+.container,
+.content-container,
+.page-container {
+    width: 100%;
+    max-width: 1400px;
+
+    margin: 0 auto;
+
+    padding-left: 2rem;
+    padding-right: 2rem;
+
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 768px) {
+
+    .container,
+    .content-container,
+    .page-container {
+
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+}
