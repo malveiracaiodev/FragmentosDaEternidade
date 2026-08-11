@@ -44,7 +44,7 @@ export const chap1cena2: Scene = {
             
         characters: [
 
-                "caleb",
+                Unlocks.Characters.Caleb,
 
             ],
 
@@ -80,7 +80,7 @@ export const chap1cena2: Scene = {
             ], 
                 characters: [
 
-                "caleb",
+                Unlocks.Characters.Caleb,
 
             ],
 unlocks: {
@@ -109,8 +109,8 @@ unlocks: {
 
             content: `Caminhando mais adiante pela praia, Caleb avistou um pequeno veleiro,
              balançando suavemente sobre as ondas rasas. A embarcação permanecia presa,
-              entre ferragens retorcidas e destroços de antigos navios destruídos, 
-              como se o mar tivesse decidido preservá-la em meio ao caos.
+             entre ferragens retorcidas e destroços de antigos navios destruídos, 
+             como se o mar tivesse decidido preservá-la em meio ao caos.
 
             Ele se aproximou, examinando o casco.
             Apesar dos arranhões e do desgaste provocado pelo tempo, 
@@ -127,19 +127,19 @@ unlocks: {
 
             media: [ 
                 { 
-                    id: "cap1cena2cut3",
+                    id: "chap1-cena2-cut3",
                     type: "video",
                     src: cap1cena2cut3
                 }
             ],
             characters: [
-                "caleb",
+                Unlocks.Characters.Caleb,
             ],
         },
             {
                 id: "chap1-cena2-cut4",
 
-                title: "O que me espera?",     
+                title: "O que me espera?",    
 
                 content: `O veleiro começou a navegar. 
                 Ao olhar para o horizonte, Caleb viu uma tempestade massiva se aproximando. 
@@ -171,7 +171,7 @@ unlocks: {
                     }
                 ],
             characters: [
-                "caleb",
+                Unlocks.Characters.Caleb,
             ],
 
             },

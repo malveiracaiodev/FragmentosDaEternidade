@@ -18,7 +18,7 @@ export const chap1cena1: Scene = {
 
 O rapaz abriu os olhos lentamente, como se estivesse emergindo de um sonho profundo.
 
-A luz tocava seu rosto de forma suave, revelando um cenário morto ao seu redor.
+A luz tocava seu rosto de forma suave, revealando um cenário morto ao seu redor.
 
 {media:despertar}
 
@@ -40,7 +40,7 @@ Ruínas de uma cidade que claramente haviam sido palco de algo grandioso… e de
         },
       ],
 
-      characters: ["caleb"],
+      characters: [Unlocks.Characters.Caleb],
     },
 
     {
@@ -92,7 +92,7 @@ A chama começou a se dissipar lentamente, como se respondesse ao seu estado.`,
         },
       ],
 
-      characters: ["caleb"],
+      characters: [Unlocks.Characters.Caleb],
 
       unlocks: {
         characters: [Unlocks.Characters.Caleb],
@@ -156,9 +156,7 @@ Como uma cicatriz no mundo.`,
         },
       ],
 
-      characters: ["caleb"],
+      characters: [Unlocks.Characters.Caleb],
     },
   ],
 };
-
-

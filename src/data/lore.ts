@@ -8,7 +8,7 @@
  */
 
 import type { LoreEntry } from "../types/lore";
-import { Unlocks } from "../types/unlocks";
+import { Unlocks, type UnlockId } from "../types/unlocks"; // Adicione o UnlockId aqui
 
 export const lore: LoreEntry[] = [
     {
