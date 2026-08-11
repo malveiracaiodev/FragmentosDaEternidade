@@ -1,14 +1,21 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fragmentos da Eternidade</title>
-    <!-- Se o seu Vite estiver configurado com base path, garanta que os assets apontem corretamente -->
+    <!-- Script que redireciona a rota atual para a raiz mantendo o caminho original na URL -->
+    <script type="text/javascript">
+      var segmentCount = 1; // Ajuste para 1 se o seu repositório for /FragmentosDaEternidade/ (conta o nome do repo como 1 segmento)
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
+        l.pathname.slice(1).split('/').slice(segmentCount).join('/') +
+        (l.search ? '&q=' + l.pathname.slice(1) : '') +
+        l.hash
+      );
+    </script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="./src/main.tsx"></script>
   </body>
 </html>
