@@ -1,29 +1,20 @@
 import type { Scene } from "../../../types/chapter";
 import { Unlocks } from "../../../types/unlocks";
+
 export const chap1cena1: Scene = {
+  id: "chap1-cena1",
 
-    id: "chap1-cena1",
+  title: "O Silêncio",
 
-    title: "O Silêncio",
+  order: 1,
 
-    order: 1,
+  cutscenes: [
+    {
+      id: "chap1-cena1-cut1",
 
+      title: "O Despertar nas Ruínas",
 
-
-    cutscenes: [
-
-
-
-        {
-
-            id: "chap1-cena1-cut1",
-
-
-            title: "O Despertar nas Ruínas",
-
-
-
-            content: `O silêncio era absoluto.
+      content: `O silêncio era absoluto.
 
 O rapaz abriu os olhos lentamente, como se estivesse emergindo de um sonho profundo.
 
@@ -39,51 +30,25 @@ Seus olhos percorreram o ambiente: construções antigas, quebradas, consumidas 
 
 Ruínas de uma cidade que claramente haviam sido palco de algo grandioso… e destrutivo.`,
 
+      order: 1,
 
-
-            order: 1,
-
-
-
-            media: [
-
-                {
-
-                    id: "despertar",
-
-                    type: "video",
-
-                    src: "https://malveiracaiodev.github.io/Fragmentos-da-eternidade/capitulo1/videos/Despertar.mp4",
-
-                },
-
-            ],
-
-
-
-            characters: [
-
-                "caleb",
-
-            ],
-
-        },
-
-
-
-
-
+      media: [
         {
+          id: "despertar",
+          type: "video",
+          src: "https://malveiracaiodev.github.io/Fragmentos-da-eternidade/capitulo1/videos/Despertar.mp4",
+        },
+      ],
 
-            id: "chap1-cena1-cut2",
+      characters: ["caleb"],
+    },
 
+    {
+      id: "chap1-cena1-cut2",
 
+      title: "A Chama Azul",
 
-            title: "A Chama Azul",
-
-
-
-            content: `Sua mente estava vazia.
+      content: `Sua mente estava vazia.
 
 Nada vinha.
 
@@ -109,78 +74,43 @@ Uma chama azul-escura envolvendo sua mão, pulsando de forma silenciosa, como se
 
 O fogo se movia com suavidade, quase como uma respiração.
 
-Mas não o queimava, em vez disso, sentiu algo diferente. Calor. Um calor profundo, que não feriu — pelo contrário, parecia preencher seu corpo com uma energia estranha, quase reconfortante. A chama começou a se dissipar lentamente, como se respondesse ao seu estado..`,
+Mas não o queimava. Em vez disso, sentiu algo diferente.
 
+Calor.
 
+Um calor profundo, que não feriu — pelo contrário, parecia preencher seu corpo com uma energia estranha, quase reconfortante.
 
-            order: 2,
+A chama começou a se dissipar lentamente, como se respondesse ao seu estado.`,
 
+      order: 2,
 
-
-            media: [
-
-                {
-
-                    id: "chamas",
-
-                    type: "video",
-
-                    src: "https://malveiracaiodev.github.io/Fragmentos-da-eternidade/capitulo1/videos/chamas.mp4",
-
-                },
-
-            ],
-
-
-
-            characters: [
-
-                "caleb",
-
-            ],
-
-
-
-            unlocks: {
-
-
-                characters: [
-
-                    Unlocks.Characters.Caleb,
-
-                ],
-
-                reward: {
-
-                    type: "character",
-
-                    id: Unlocks.Characters.Caleb,
-
-                    name: "Caleb",
-
-                },
-
-
-            },
-
-
-        },
-
-
-
-
-
+      media: [
         {
+          id: "chamas",
+          type: "video",
+          src: "https://malveiracaiodev.github.io/Fragmentos-da-eternidade/capitulo1/videos/chamas.mp4",
+        },
+      ],
 
-            id: "chap1-cena1-cut3",
+      characters: ["caleb"],
 
+      unlocks: {
+        characters: [Unlocks.Characters.Caleb],
 
+        reward: {
+          type: "character",
+          id: Unlocks.Characters.Caleb,
+          name: "Caleb",
+        },
+      },
+    },
 
-            title: "A Cidade Afundada",
+    {
+      id: "chap1-cena1-cut3",
 
+      title: "A Cidade Afundada",
 
-
-            content: `Confuso, ele se levantou com cuidado.
+      content: `Confuso, ele se levantou com cuidado.
 
 Seus olhos voltaram a explorar o lugar.
 
@@ -188,7 +118,17 @@ A cidade não tinha saída visível.
 
 Ao redor, uma enorme formação rochosa cercava tudo — alta, contínua, sufocante.
 
-Parecia uma montanha. Sem pensar muito, Caleb caminhou até sua base. Vinhas grossas se estendiam pelas pedras, como se a própria natureza tentasse engolir aquele lugar esquecido. Ele começou a escalar. O esforço era grande, mas algo dentro dele o impulsionava. Como se aquela energia ainda pulsasse em seu corpo.
+Parecia uma montanha.
+
+Sem pensar muito, Caleb caminhou até sua base.
+
+Vinhas grossas se estendiam pelas pedras, como se a própria natureza tentasse engolir aquele lugar esquecido.
+
+Ele começou a escalar.
+
+O esforço era grande, mas algo dentro dele o impulsionava.
+
+Como se aquela energia ainda pulsasse em seu corpo.
 
 {media:escalada}
 
@@ -206,71 +146,19 @@ Afundada.
 
 Como uma cicatriz no mundo.`,
 
+      order: 3,
 
-
-            order: 3,
-
-
-
-            media: [
-
-                {
-
-                    id: "escalada",
-
-                    type: "video",
-
-                    src: "https://malveiracaiodev.github.io/Fragmentos-da-eternidade/capitulo1/videos/escalada.mp4",
-
-                },
-
-            ],
-
-
-
-            characters: [
-
-                "caleb",
-
-            ],
-
-
-
-            unlocks: {
-
-
-    characters: [
-
-        Unlocks.Characters.Caleb,
-
-    ],
-
-
-    locations: [
-
-        Unlocks.Locations.ForgottenCity,
-
-    ],
-
-
-    reward: {
-
-        type:"character",
-
-        id:Unlocks.Characters.Caleb,
-
-        name:"Caleb",
-
-    },
-
-
-},
-
-
+      media: [
+        {
+          id: "escalada",
+          type: "video",
+          src: "https://malveiracaiodev.github.io/Fragmentos-da-eternidade/capitulo1/videos/escalada.mp4",
         },
+      ],
 
-
-
-    ],
-
+      characters: ["caleb"],
+    },
+  ],
 };
+
+
