@@ -1,97 +1,32 @@
-.login-container {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: radial-gradient(circle at center, #13182b 0%, #070913 100%);
+/* Container principal da página de login */
+.login-page-wrapper {
     position: relative;
+    width: 100vw;
+    height: 100vh;
     overflow: hidden;
-    padding: 1rem;
-}
-
-/* Efeito de partículas/brilho no fundo */
-.login-container::before {
-    content: "";
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, transparent 70%);
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    pointer-events: none;
-}
-
-.login-card {
-    position: relative;
-    z-index: 2;
-    background: rgba(15, 23, 42, 0.85);
-    border: 1px solid rgba(148, 163, 184, 0.15);
-    backdrop-filter: blur(12px);
-    padding: 3rem 2.5rem;
-    border-radius: 1.5rem;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 
-                0 0 30px rgba(99, 102, 241, 0.1);
-    width: 100%;
-    max-width: 440px;
-    text-align: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-}
-
-.login-header h1 {
-    font-size: 2rem;
-    color: #f8fafc;
-    margin-bottom: 0.75rem;
-    font-family: inherit;
-    letter-spacing: 0.05em;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-}
-
-.login-header p {
-    color: #94a3b8;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 2.5rem;
-}
-
-.google-login-btn {
-    display: flex;
-    align-items: center;
     justify-content: center;
-    gap: 12px;
+    align-items: center;
+}
+
+/* Estilização e posicionamento do vídeo de fundo */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Garante que o vídeo cubra toda a tela sem distorcer */
+    z-index: -1;       /* Joga o vídeo para trás de todo o conteúdo */
+}
+
+/* Garante que o card de login fique flutuando acima do vídeo */
+.login-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
-    background-color: #ffffff;
-    color: #1e293b;
-    border: none;
-    padding: 0.85rem 1.5rem;
-    font-size: 1rem;
-    font-weight: 600;
-    border-radius: 0.75rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.google-login-btn:hover {
-    background-color: #f1f5f9;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 255, 255, 0.15);
-}
-
-.google-login-btn:active {
-    transform: translateY(0);
-}
-
-.google-icon {
-    width: 20px;
-    height: 20px;
-}
-
-.login-footer {
-    margin-top: 2rem;
-    color: #64748b;
-    font-size: 0.85rem;
 }
