@@ -6,6 +6,7 @@ export function Navbar() {
     const {
         user,
         loading,
+        logout, // <--- Adicionamos o logout aqui
     } = useAuth();
 
     return (
@@ -25,7 +26,7 @@ export function Navbar() {
                 )}
             </div>
 
-            {/* DIREITA (Áudio e Perfil) */}
+            {/* DIREITA (Áudio, Perfil e Logout) */}
             <div className="navbar-right">
                 <button
                     className="icon-button"
@@ -36,25 +37,38 @@ export function Navbar() {
                 </button>
 
                 {!loading && user && (
-                    <Link
-                        to="/perfil"
-                        className="profile-container"
-                        title={user.displayName ?? "Perfil do viajante"}
-                    >
-                        <div className="profile-circle">
-                            <img
-                                src={user.photoURL ?? "/icone.jfif"}
-                                alt="Avatar do viajante"
-                                onError={(event) => {
-                                    event.currentTarget.src = "/icone.jfif";
-                                }}
-                            />
-                        </div>
-                        <span className="profile-name">
-                            {user.displayName?.split(" ")[0] ?? "Viajante"}
-                        </span>
-                        <span className="profile-arrow">▼</span>
-                    </Link>
+                    <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                        <Link
+                            to="/perfil"
+                            className="profile-container"
+                            title={user.displayName ?? "Perfil do viajante"}
+                        >
+                            <div className="profile-circle">
+                                <img
+                                    src={user.photoURL ?? "/icone.jfif"}
+                                    alt="Avatar do viajante"
+                                    onError={(event) => {
+                                        event.currentTarget.src = "/icone.jfif";
+                                    }}
+                                />
+                            </div>
+                            <span className="profile-name">
+                                {user.displayName?.split(" ")[0] ?? "Viajante"}
+                            </span>
+                            <span className="profile-arrow">▼</span>
+                        </Link>
+
+                        {/* Botão de Logout rápido na Navbar para testes e uso */}
+                        <button
+                            onClick={logout}
+                            className="icon-button"
+                            title="Sair da conta"
+                            aria-label="Sair da conta"
+                            style={{ fontSize: "0.9rem", padding: "6px 10px", background: "rgba(239, 68, 68, 0.1)", border: "1px solid rgba(239, 68, 68, 0.3)", borderRadius: "6px", color: "#f87171", cursor: "pointer" }}
+                        >
+                            🚪 Sair
+                        </button>
+                    </div>
                 )}
             </div>
         </nav>

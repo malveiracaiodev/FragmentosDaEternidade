@@ -23,7 +23,7 @@ import type {
 import "../styles/profile.css";
 
 export default function Profile() {
-    const { user } = useAuth();
+    const { user, logout } = useAuth(); // <--- Adicionamos o logout aqui
 
     const [player, setPlayer] =
         useState<PlayerData | null>(null);
@@ -115,14 +115,12 @@ export default function Profile() {
                 });
         }, [unlockedItems]);
 
-    // Helper para formatar os últimos desbloqueios de forma amigável
     const formatUnlockName = (itemKey: string) => {
         const resolved = resolveUnlock(itemKey);
         if (resolved && typeof resolved === 'object' && 'name' in resolved && resolved.name) {
             return resolved.name;
         }
         
-        // Fallback caso não resolva via helper: limpa o prefixo e formata
         const [category, id] = itemKey.split(".");
         const formattedId = id ? id.replace(/[-_]/g, " ") : itemKey;
         const capitalizedId = formattedId.charAt(0).toUpperCase() + formattedId.slice(1);
@@ -259,6 +257,17 @@ export default function Profile() {
                     <span className="player-title">
                         Viajante dos Fragmentos
                     </span>
+                </div>
+
+                {/* Botão de Logout adicionado no Perfil */}
+                <div className="profile-actions" style={{ marginLeft: "auto" }}>
+                    <button 
+                        onClick={logout} 
+                        className="logout-button"
+                        style={{ padding: "8px 16px", background: "#ef4444", color: "#fff", border: "none", borderRadius: "8px", cursor: "pointer", fontWeight: "bold" }}
+                    >
+                        Sair da conta
+                    </button>
                 </div>
             </section>
 
