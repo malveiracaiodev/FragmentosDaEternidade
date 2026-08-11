@@ -8,7 +8,7 @@ import MainLayout from "./layouts/MainLayout";
 
 import Home from "./pages/Home";
 import Story from "./pages/Story";
-import ChapterReader from "./pages/ChapterReader"; // Importando a nova página de exibição
+import ChapterReader from "./pages/ChapterReader";
 import Characters from "./pages/Characters";
 import Caleb from "./pages/Caleb";
 import World from "./pages/World";
@@ -17,7 +17,7 @@ import Profile from "./pages/Profile";
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/FragmentosDaEternidade">
             <Routes>
 
                 {/* =================================
