@@ -109,15 +109,16 @@ export default function Profile() {
                         unlockId
                     )
                 )
-                .filter(
-                    Boolean
-                );
+                .filter((symbol): symbol is NonNullable<typeof symbol> => {
+                    if (!symbol || typeof symbol !== 'object') return false;
+                    return 'rarity' in symbol || 'rarities' in symbol;
+                });
         }, [unlockedItems]);
 
     // Helper para formatar os últimos desbloqueios de forma amigável
     const formatUnlockName = (itemKey: string) => {
         const resolved = resolveUnlock(itemKey);
-        if (resolved && resolved.name) {
+        if (resolved && typeof resolved === 'object' && 'name' in resolved && resolved.name) {
             return resolved.name;
         }
         
@@ -279,34 +280,41 @@ export default function Profile() {
                     </div>
                     :
                     symbolsUnlocked.map(
-                        symbol => (
-                            <div
-                                key={symbol!.id}
-                                className="symbol-item unlocked"
-                            >
-                                <img
-                                    src={symbol!.image}
-                                    alt={symbol!.name}
-                                    loading="lazy"
-                                />
+                        symbol => {
+                            const symName = symbol && 'name' in symbol ? (symbol.name as string) : "Símbolo Desconhecido";
+                            const symImage = symbol && 'image' in symbol ? (symbol.image as string) : "";
+                            const symDesc = symbol && 'description' in symbol ? (symbol.description as string) : "";
+                            const symRarity = symbol && 'rarity' in symbol ? (symbol.rarity as string) : "common";
 
-                                <div>
-                                    <h3>
-                                        {symbol!.name}
-                                    </h3>
+                            return (
+                                <div
+                                    key={symbol && 'id' in symbol ? (symbol.id as string) : Math.random()}
+                                    className="symbol-item unlocked"
+                                >
+                                    <img
+                                        src={symImage}
+                                        alt={symName}
+                                        loading="lazy"
+                                    />
 
-                                    <p>
-                                        {symbol!.description}
-                                    </p>
+                                    <div>
+                                        <h3>
+                                            {symName}
+                                        </h3>
 
-                                    <span>
-                                        Raridade:
-                                        {" "}
-                                        {symbol!.rarity}
-                                    </span>
+                                        <p>
+                                            {symDesc}
+                                        </p>
+
+                                        <span>
+                                            Raridade:
+                                            {" "}
+                                            {symRarity}
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                        )
+                            );
+                        }
                     )
                     }
                 </div>
