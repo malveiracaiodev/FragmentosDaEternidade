@@ -2,7 +2,7 @@ import type { Character } from "../../types/character";
 import { Unlocks } from "../../types/unlocks";
 
 import CalebImage from "../../assets/personagenspages/CalebCena1.png";
-import CalebVideo from "../../assets/personagenspages/Calebbanner.mp4";
+import CalebVideo from "../../assets/personagenspages/calebbanner.mp4";
 
 
 export const caleb: Character = {
