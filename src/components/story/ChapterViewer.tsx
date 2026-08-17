@@ -26,20 +26,22 @@ export function ChapterViewer({
 
     if (!scene) {
         return (
-            <section className="chapter-card error-card">
-                <h2>
-                    Cena não encontrada.
-                </h2>
-                <p>
-                    Esta parte da história ainda não foi revelada.
-                </p>
+            <section className="chapter-viewer">
+                <div className="chapter-card error-card">
+                    <h2>
+                        Cena não encontrada.
+                    </h2>
+                    <p>
+                        Esta parte da história ainda não foi revelada.
+                    </p>
+                </div>
             </section>
         );
     }
 
     return (
         <section className="chapter-viewer">
-            <section className="chapter-card">
+            <div className="chapter-card">
                 <header className="chapter-header">
                     <span className="chapter-label">
                         CENA {scene.order}
@@ -53,7 +55,7 @@ export function ChapterViewer({
                         {chapter.description}
                     </p>
                 </header>
-            </section>
+            </div>
 
             <SceneViewer
                 scene={scene}

@@ -229,41 +229,47 @@ export function NarrativePlayer({
 
     if(!chapter.scenes.length){
         return (
-            <p>
-                Este capítulo ainda não possui cenas.
-            </p>
+            <div className="narrative-wrapper">
+                <div className="chapter-card error-card">
+                    <p>Este capítulo ainda não possui cenas.</p>
+                </div>
+            </div>
         );
     }
 
     if(!scene){
         return (
-            <p>
-                Cena não encontrada.
-            </p>
+            <div className="narrative-wrapper">
+                <div className="chapter-card error-card">
+                    <p>Cena não encontrada.</p>
+                </div>
+            </div>
         );
     }
 
     return (
-        <ChapterViewer
-            chapter={chapter}
-            currentScene={
-                currentScene
-            }
-            currentCutscene={
-                currentCutscene
-            }
-            nextCutscene={
-                nextCutscene
-            }
-            previousCutscene={
-                previousCutscene
-            }
-            nextScene={
-                nextScene
-            }
-            previousScene={
-                previousScene
-            }
-        />
+        <div className="narrative-wrapper">
+            <ChapterViewer
+                chapter={chapter}
+                currentScene={
+                    currentScene
+                }
+                currentCutscene={
+                    currentCutscene
+                }
+                nextCutscene={
+                    nextCutscene
+                }
+                previousCutscene={
+                    previousCutscene
+                }
+                nextScene={
+                    nextScene
+                }
+                previousScene={
+                    previousScene
+                }
+            />
+        </div>
     );
 }
