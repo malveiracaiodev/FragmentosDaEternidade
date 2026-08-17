@@ -280,7 +280,6 @@
     padding-top: 16px;
 }
 
-/* Joga o botão para a direita caso não haja botão esquerdo */
 .scene-controls:has(.scene-button.next:only-child) {
     justify-content: flex-end;
 }
