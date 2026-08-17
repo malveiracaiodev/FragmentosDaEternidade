@@ -169,7 +169,8 @@
    CHAPTER VIEWER
 ===================================== */
 
-.chapter-viewer {
+.chapter-viewer, 
+.scene-viewer {
     width: 100%;
     max-width: 900px;
     display: flex;
@@ -188,17 +189,25 @@
     border: 1px solid rgba(0, 255, 255, 0.25);
     border-radius: 25px;
     backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .scene-card-wrapper {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px;
+    box-sizing: border-box;
 }
 
 .chapter-header {
     width: 100%;
     overflow-wrap: break-word;
+    text-align: center;
 }
 
 .chapter-label {
@@ -232,15 +241,15 @@
 .scene-text-content p,
 .cutscene-description p {
     width: 100% !important;
-    max-width: 800px !important;
-    margin: 10px auto !important;
-    font-size: 1.25rem !important;
-    line-height: 1.45 !important;
+    max-width: 100% !important;
+    margin: 12px 0 !important;
+    font-size: 1.15rem !important;
+    line-height: 1.6 !important;
     color: #e0f4ff !important;
     text-align: center !important;
     font-weight: 400 !important;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
-    display: block !important;
+    word-break: break-word;
 }
 
 .chapter-reader-wrapper h2,
@@ -259,14 +268,6 @@
 /* =====================================
    CONTROLES DE CENA (BOTÕES ANTERIOR / PRÓXIMA)
 ===================================== */
-
-.scene-viewer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
 
 .scene-controls {
     width: 100%;
