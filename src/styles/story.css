@@ -166,7 +166,7 @@
 }
 
 /* =====================================
-   CHAPTER VIEWER
+   CHAPTER VIEWER E SCENE VIEWER CONTAINERS
 ===================================== */
 
 .chapter-viewer, 
@@ -231,38 +231,87 @@
 }
 
 /* =====================================
-   ESTILIZAÇÃO DOS TEXTOS DA CUTSCENE
+   ESTILIZAÇÃO DOS TEXTOS DA CUTSCENE (CORRIGIDO)
 ===================================== */
 
+.chapter-card p,
 .chapter-reader-wrapper p,
 .chapter-viewer p,
 .scene-viewer p,
 .cutscene-text-container p,
 .scene-text-content p,
-.cutscene-description p {
+.cutscene-description p,
+.cutscene-content {
     width: 100% !important;
     max-width: 100% !important;
-    margin: 12px 0 !important;
-    font-size: 1.15rem !important;
-    line-height: 1.6 !important;
+    position: relative !important;
+    transform: none !important;
+    margin: 10px 0 !important;
+    font-size: 1.05rem !important;
+    line-height: 1.5 !important;
     color: #e0f4ff !important;
     text-align: center !important;
     font-weight: 400 !important;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8) !important;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8) !important;
     word-break: break-word;
+    display: block !important;
 }
 
+.chapter-card h2,
+.chapter-card h3,
 .chapter-reader-wrapper h2,
 .chapter-reader-wrapper h3,
 .chapter-viewer h2,
 .chapter-viewer h3,
 .scene-viewer h2,
-.scene-viewer h3 {
+.scene-viewer h3,
+.cutscene-player h3 {
     text-align: center !important;
     color: cyan !important;
-    font-size: 1.5rem !important;
-    margin: 15px auto 8px auto !important;
+    font-size: 1.4rem !important;
+    margin: 10px 0 !important;
     letter-spacing: 1px !important;
+}
+
+/* =====================================
+   MÍDIAS DA CUTSCENE (VÍDEO, IMAGEM, ÁUDIO)
+===================================== */
+
+.cutscene-container,
+.cutscene-player {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.cutscene-media-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.cutscene-video,
+.cutscene-image {
+    width: 100%;
+    max-height: 450px;
+    object-fit: contain;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.audio-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.cutscene-audio {
+    width: 100%;
+    max-width: 400px;
 }
 
 /* =====================================
