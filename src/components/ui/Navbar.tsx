@@ -8,10 +8,9 @@ export function Navbar() {
         user,
         loading,
         logout,
-        loginWithGoogle, // Certifique-se de que seu useAuth possui essa função (ou ajuste para o seu método de login)
+        loginWithGoogle, // Ajuste para o método de login do seu useAuth se necessário
     } = useAuth();
 
-    // Estado para controlar a abertura/fechamento do pop-up de login
     const [showLoginModal, setShowLoginModal] = useState(false);
 
     return (
@@ -87,10 +86,9 @@ export function Navbar() {
             {showLoginModal && (
                 <div className="login-modal-overlay" onClick={() => setShowLoginModal(false)}>
                     <div className="login-modal-content" onClick={(e) => e.stopPropagation()}>
-                        <h3>Entrar no Fragmentos</h3>
-                        <p>Faça login para salvar seu progresso e interagir com o mundo.</p>
+                        <h3>Portal do Viajante</h3>
+                        <p>Faça login para registrar suas jornadas em Fragmentos da Eternidade.</p>
                         
-                        {/* Exemplo de botão de login (ajuste conforme o provedor, ex: Google, Email/Senha) */}
                         <button 
                             className="login-provider-button"
                             onClick={() => {
@@ -98,7 +96,7 @@ export function Navbar() {
                                 setShowLoginModal(false);
                             }}
                         >
-                            Entrar com Google
+                            <span>🌐</span> Entrar com Google
                         </button>
 
                         <button 
