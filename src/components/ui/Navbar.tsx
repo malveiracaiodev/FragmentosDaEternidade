@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 import "../../styles/navbar.css";
@@ -6,8 +7,12 @@ export function Navbar() {
     const {
         user,
         loading,
-        logout, // <--- Adicionamos o logout aqui
+        logout,
+        loginWithGoogle, // Certifique-se de que seu useAuth possui essa função (ou ajuste para o seu método de login)
     } = useAuth();
+
+    // Estado para controlar a abertura/fechamento do pop-up de login
+    const [showLoginModal, setShowLoginModal] = useState(false);
 
     return (
         <nav
@@ -22,7 +27,13 @@ export function Navbar() {
                 <NavItem path="/personagens" text="PERSONAGENS" />
 
                 {!loading && !user && (
-                    <NavItem path="/login" text="LOGIN" />
+                    <button
+                        onClick={() => setShowLoginModal(true)}
+                        className="nav-link"
+                        style={{ background: "none", border: "none", cursor: "pointer" }}
+                    >
+                        LOGIN
+                    </button>
                 )}
             </div>
 
@@ -58,7 +69,7 @@ export function Navbar() {
                             <span className="profile-arrow">▼</span>
                         </Link>
 
-                        {/* Botão de Logout rápido na Navbar para testes e uso */}
+                        {/* Botão de Logout rápido na Navbar */}
                         <button
                             onClick={logout}
                             className="icon-button"
@@ -71,6 +82,34 @@ export function Navbar() {
                     </div>
                 )}
             </div>
+
+            {/* MODAL / POP-UP DE LOGIN FLUTUANTE */}
+            {showLoginModal && (
+                <div className="login-modal-overlay" onClick={() => setShowLoginModal(false)}>
+                    <div className="login-modal-content" onClick={(e) => e.stopPropagation()}>
+                        <h3>Entrar no Fragmentos</h3>
+                        <p>Faça login para salvar seu progresso e interagir com o mundo.</p>
+                        
+                        {/* Exemplo de botão de login (ajuste conforme o provedor, ex: Google, Email/Senha) */}
+                        <button 
+                            className="login-provider-button"
+                            onClick={() => {
+                                loginWithGoogle?.();
+                                setShowLoginModal(false);
+                            }}
+                        >
+                            Entrar com Google
+                        </button>
+
+                        <button 
+                            className="close-modal-button"
+                            onClick={() => setShowLoginModal(false)}
+                        >
+                            ✕ Fechar
+                        </button>
+                    </div>
+                </div>
+            )}
         </nav>
     );
 }
