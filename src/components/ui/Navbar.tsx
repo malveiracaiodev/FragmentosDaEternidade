@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAuth } from "../../hooks/useAuth";
+import { useAuth } from "../../hooks/useAuth"; // ou o caminho correto do seu hook
 import "../../styles/navbar.css";
 
 export function Navbar() {
@@ -8,7 +8,7 @@ export function Navbar() {
         user,
         loading,
         logout,
-        loginWithGoogle, // Ajuste para o método de login do seu useAuth se necessário
+        login, // <--- Aqui está o nome correto fornecido pelo seu AuthProvider
     } = useAuth();
 
     const [showLoginModal, setShowLoginModal] = useState(false);
@@ -91,9 +91,13 @@ export function Navbar() {
                         
                         <button 
                             className="login-provider-button"
-                            onClick={() => {
-                                loginWithGoogle?.();
-                                setShowLoginModal(false);
+                            onClick={async () => {
+                                try {
+                                    await login(); // <--- Chamando a função 'login' do contexto
+                                    setShowLoginModal(false);
+                                } catch (error) {
+                                    // Erro já tratado no contexto ou console, mas evitamos fechar o modal se bloquear
+                                }
                             }}
                         >
                             <span>🌐</span> Entrar com Google
