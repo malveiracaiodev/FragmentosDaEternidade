@@ -12,13 +12,25 @@ export function Navbar() {
     } = useAuth();
 
     const [showLoginModal, setShowLoginModal] = useState(false);
+    const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+    const closeMenu = () => setShowMobileMenu(false);
 
     return (
         <nav
             className="navbar-expanded"
             aria-label="Navegação principal"
         >
-            {/* LINKS DA ESQUERDA */}
+            {/* BOTÃO HAMBÚRGUER (Aparece apenas no mobile/sem espaço) */}
+            <button
+                className="mobile-menu-toggle"
+                onClick={() => setShowMobileMenu(true)}
+                aria-label="Abrir menu de navegação"
+            >
+                ☰
+            </button>
+
+            {/* LINKS DA ESQUERDA (Visíveis em desktop) */}
             <div className="navbar-links">
                 <NavItem path="/" text="INÍCIO" />
                 <NavItem path="/historia" text="HISTÓRIA" />
@@ -47,7 +59,7 @@ export function Navbar() {
                 </button>
 
                 {!loading && user && (
-                    <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                    <div className="user-nav-actions" style={{ display: "flex", alignItems: "center", gap: "12px" }}>
                         <Link
                             to="/perfil"
                             className="profile-container"
@@ -70,7 +82,7 @@ export function Navbar() {
 
                         <button
                             onClick={logout}
-                            className="icon-button"
+                            className="icon-button logout-btn-desktop"
                             title="Sair da conta"
                             aria-label="Sair da conta"
                             style={{ fontSize: "0.9rem", padding: "6px 10px", width: "auto", background: "rgba(239, 68, 68, 0.1)", border: "1px solid rgba(239, 68, 68, 0.3)", borderRadius: "6px", color: "#f87171", cursor: "pointer" }}
@@ -80,6 +92,54 @@ export function Navbar() {
                     </div>
                 )}
             </div>
+
+            {/* MENU LATERAL / WIDGET MOBILE (Drawer) */}
+            {showMobileMenu && (
+                <div className="mobile-drawer-overlay" onClick={closeMenu}>
+                    <div className="mobile-drawer-content" onClick={(e) => e.stopPropagation()}>
+                        <div className="mobile-drawer-header">
+                            <h3>Navegação</h3>
+                            <button className="close-drawer-button" onClick={closeMenu}>✕</button>
+                        </div>
+
+                        <div className="mobile-drawer-links">
+                            <Link to="/" className="mobile-nav-link" onClick={closeMenu}>INÍCIO</Link>
+                            <Link to="/historia" className="mobile-nav-link" onClick={closeMenu}>HISTÓRIA</Link>
+                            <Link to="/mundo" className="mobile-nav-link" onClick={closeMenu}>MUNDO</Link>
+                            <Link to="/personagens" className="mobile-nav-link" onClick={closeMenu}>PERSONAGENS</Link>
+
+                            {!loading && !user && (
+                                <button
+                                    className="mobile-nav-link login-action-btn"
+                                    onClick={() => {
+                                        closeMenu();
+                                        setShowLoginModal(true);
+                                    }}
+                                >
+                                    LOGIN
+                                </button>
+                            )}
+
+                            {!loading && user && (
+                                <>
+                                    <Link to="/perfil" className="mobile-nav-link profile-link-mobile" onClick={closeMenu}>
+                                        👤 PERFIL ({user.displayName?.split(" ")[0] ?? "Viajante"})
+                                    </Link>
+                                    <button
+                                        onClick={() => {
+                                            closeMenu();
+                                            logout();
+                                        }}
+                                        className="mobile-nav-link logout-action-btn"
+                                    >
+                                        🚪 SAIR DA CONTA
+                                    </button>
+                                </>
+                            )}
+                        </div>
+                    </div>
+                </div>
+            )}
 
             {/* MODAL / POP-UP DE LOGIN FLUTUANTE */}
             {showLoginModal && (
