@@ -18,7 +18,7 @@ export function Navbar() {
             className="navbar-expanded"
             aria-label="Navegação principal"
         >
-            {/* LINKS DA ESQUERDA (Início, História, Mundo, Personagens e Login) */}
+            {/* LINKS DA ESQUERDA */}
             <div className="navbar-links">
                 <NavItem path="/" text="INÍCIO" />
                 <NavItem path="/historia" text="HISTÓRIA" />
@@ -68,7 +68,6 @@ export function Navbar() {
                             <span className="profile-arrow">▼</span>
                         </Link>
 
-                        {/* Botão de Logout rápido na Navbar */}
                         <button
                             onClick={logout}
                             className="icon-button"
@@ -123,7 +122,7 @@ interface NavItemProps {
 
 function NavItem({ path, text }: NavItemProps) {
     return (
-        <Link to5={path} to={path} className="nav-link">
+        <Link to={path} className="nav-link">
             {text}
         </Link>
     );
