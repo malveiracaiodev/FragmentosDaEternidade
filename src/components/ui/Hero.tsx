@@ -1,27 +1,28 @@
+import React from 'react';
 import { useNavigate } from "react-router-dom";
 import videoBg from "../../assets/background.mp4";
 import headerImg from "../../assets/header.png";
 import "../../styles/hero.css";
 
-function Hero() {
+export function Hero(): React.JSX.Element {
     const navigate = useNavigate();
 
-    function openStory() {
+    function openStory(): void {
         navigate("/historia");
     }
 
     return (
         <div className="hero-wrapper">
-            {/* 1. LOGO GRANDE NO TOPO (Rola junto com a página) */}
+            {/* LOGO GRANDE NO TOPO */}
             <div className="main-logo-container">
                 <img 
                     src={headerImg} 
-                    alt="Fragmentos da Eternidade" 
+                    alt="Eryon Chronicles" 
                     className="main-logo-img"
                 />
             </div>
 
-            {/* 3. SEÇÃO HERO COM VÍDEO E PAINEL */}
+            {/* SEÇÃO HERO COM VÍDEO E PAINEL */}
             <section className="hero">
                 <video autoPlay loop muted playsInline className="hero-video-bg" aria-hidden="true">
                     <source src={videoBg} type="video/mp4" />

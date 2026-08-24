@@ -21,7 +21,7 @@ export function Navbar() {
             className="navbar-expanded"
             aria-label="Navegação principal"
         >
-            {/* BOTÃO HAMBÚRGUER (Aparece apenas no mobile/sem espaço) */}
+            {/* BOTÃO HAMBÚRGUER (Aparece apenas no mobile via CSS) */}
             <button
                 className="mobile-menu-toggle"
                 onClick={() => setShowMobileMenu(true)}
@@ -30,7 +30,7 @@ export function Navbar() {
                 ☰
             </button>
 
-            {/* LINKS DA ESQUERDA (Visíveis em desktop) */}
+            {/* LINKS DA ESQUERDA (Ocultos no mobile via CSS) */}
             <div className="navbar-links">
                 <NavItem path="/" text="INÍCIO" />
                 <NavItem path="/historia" text="HISTÓRIA" />
@@ -48,7 +48,7 @@ export function Navbar() {
                 )}
             </div>
 
-            {/* DIREITA (Áudio, Perfil e Logout) */}
+            {/* DIREITA (Áudio e Perfil) */}
             <div className="navbar-right">
                 <button
                     className="icon-button"
@@ -59,7 +59,7 @@ export function Navbar() {
                 </button>
 
                 {!loading && user && (
-                    <div className="user-nav-actions" style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+                    <div className="user-nav-actions" style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                         <Link
                             to="/perfil"
                             className="profile-container"
@@ -80,6 +80,7 @@ export function Navbar() {
                             <span className="profile-arrow">▼</span>
                         </Link>
 
+                        {/* Botão de Sair apenas no Desktop (no mobile vai para o menu lateral) */}
                         <button
                             onClick={logout}
                             className="icon-button logout-btn-desktop"
@@ -146,7 +147,7 @@ export function Navbar() {
                 <div className="login-modal-overlay" onClick={() => setShowLoginModal(false)}>
                     <div className="login-modal-content" onClick={(e) => e.stopPropagation()}>
                         <h3>Portal do Viajante</h3>
-                        <p>Faça login para registrar suas jornadas em Fragmentos da Eternidade.</p>
+                        <p>Faça login para registrar suas jornadas em Eryon Chronicles.</p>
                         
                         <button 
                             className="login-provider-button"

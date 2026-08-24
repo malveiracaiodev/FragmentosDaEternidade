@@ -119,13 +119,36 @@
     cursor: pointer;
 }
 
-/* Regra para exibir o botão hambúrguer apenas quando a tela for estreita */
+/* =====================================
+   RESPONSIVIDADE E CORREÇÃO MOBILE
+===================================== */
 @media (max-width: 768px) {
+    /* Exibe o menu hambúrguer */
     .mobile-menu-toggle {
         display: flex;
     }
+
+    /* Esconde os links do desktop para liberar espaço */
     .navbar-links {
         display: none !important;
+    }
+
+    /* Esconde o botão de logout grande da barra superior no celular */
+    .logout-btn-desktop {
+        display: none !important;
+    }
+
+    /* Oculta o nome de usuário escrito e a setinha no topo do celular, mantendo apenas o avatar limpo */
+    .profile-name, .profile-arrow {
+        display: none !important;
+    }
+
+    /* Ajusta o espaçamento geral da barra expansível no mobile */
+    .navbar-expanded {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 15px;
     }
 }
 
