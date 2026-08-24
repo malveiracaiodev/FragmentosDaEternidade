@@ -1,8 +1,8 @@
 /**
- * Fragmentos da Eternidade
+ * Fragmentos da Eternidade (Eryon Chronicles)
  * Tipos estruturais do sistema narrativo.
  *
- * Define capítulos, cenas, cutscenes, mídias e
+ * Define livros, capítulos, cenas, cutscenes, mídias e
  * os registros que podem ser descobertos durante
  * a leitura da história.
  */
@@ -10,13 +10,28 @@
 import type { UnlockId } from "./unlocks";
 
 /* =====================================
+   LIVRO (NOVO: Agrupador de Capítulos)
+===================================== */
+
+export interface Book {
+    id: string;
+    title: string;
+    subtitle: string;
+    description: string;
+    status: "active" | "locked" | "coming_soon";
+    chapters: Chapter[];
+}
+
+/* =====================================
    CAPÍTULO
 ===================================== */
 
 export interface Chapter {
-    id: string;
+    id: string | number;
+    number: number;
     title: string;
     description: string;
+    status: "available" | "coming_soon" | "locked";
     scenes: Scene[];
 }
 
@@ -28,6 +43,8 @@ export interface Scene {
     id: string;
     title: string;
     order: number;
+    duration?: string; // Ex: "Leitura / Interativo" ou "5 min"
+    isUnlocked?: boolean;
     cutscenes: Cutscene[];
 }
 

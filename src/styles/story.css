@@ -42,7 +42,162 @@
 }
 
 /* =====================================
-   GRID DE CAPÍTULOS
+   WIDGETS DE LIVROS E CAPÍTULOS (NOVO)
+===================================== */
+
+.books-wrapper {
+    width: 100%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.book-widget {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(12px);
+    transition: all 0.3s ease;
+}
+
+.book-widget.open {
+    border-color: cyan;
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 8px 25px rgba(0, 255, 255, 0.12);
+}
+
+.book-widget.locked {
+    opacity: 0.5;
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+.book-widget-header {
+    padding: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.book-widget-header:hover {
+    background: rgba(0, 255, 255, 0.03);
+}
+
+.book-toggle-icon {
+    font-size: 1.1rem;
+    color: cyan;
+    font-weight: bold;
+}
+
+/* Lista interna de Capítulos dentro do Livro */
+.chapters-list-container {
+    padding: 0 25px 25px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-top: 1px solid rgba(0, 255, 255, 0.15);
+}
+
+.chapter-card-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 255, 255, 0.15);
+    border-radius: 15px;
+    margin-top: 15px;
+    overflow: hidden;
+}
+
+.chapter-select-card-header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.chapter-select-card-header:hover {
+    background: rgba(0, 255, 255, 0.06);
+}
+
+.chapter-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.chapter-info h2 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: white;
+}
+
+.chapter-info p {
+    margin: 0;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+/* =====================================
+   GRID DE CENAS (NOVO)
+===================================== */
+
+.scenes-grid {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 15px;
+    background: rgba(5, 8, 13, 0.4);
+    border-top: 1px solid rgba(0, 255, 255, 0.1);
+}
+
+.scene-item-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.scene-item-card:hover {
+    border-color: cyan;
+    transform: translateY(-2px);
+    background: rgba(0, 255, 255, 0.08);
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.15);
+}
+
+.scene-details h4 {
+    margin: 0 0 4px 0;
+    font-size: 1rem;
+    color: white;
+}
+
+.scene-details span {
+    font-size: 0.8rem;
+    color: #9adfff;
+}
+
+.scene-item-card.locked-scene {
+    opacity: 0.5;
+    cursor: not-allowed;
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.scene-item-card.locked-scene:hover {
+    transform: none;
+    border-color: rgba(255, 255, 255, 0.05);
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: none;
+}
+
+/* =====================================
+   GRID DE CAPÍTULOS ANTIGO (Caso utilize em outro lugar)
 ===================================== */
 
 .chapters-grid {
@@ -55,10 +210,6 @@
     );
     gap: 20px;
 }
-
-/* =====================================
-   CARD CAPÍTULO
-===================================== */
 
 .chapter-select-card {
     width: 100%;
@@ -231,7 +382,7 @@
 }
 
 /* =====================================
-   ESTILIZAÇÃO DOS TEXTOS DA CUTSCENE (CORRIGIDO)
+   ESTILIZAÇÃO DOS TEXTOS DA CUTSCENE
 ===================================== */
 
 .chapter-card p,
@@ -315,7 +466,7 @@
 }
 
 /* =====================================
-   CONTROLES DE CENA (BOTÕES ANTERIOR / PRÓXIMA)
+   CONTROLES DE CENA
 ===================================== */
 
 .scene-controls {
@@ -442,7 +593,8 @@
         font-size: 1.7rem;
     }
 
-    .chapters-grid {
+    .chapters-grid,
+    .scenes-grid {
         grid-template-columns: 1fr;
     }
 
@@ -470,11 +622,13 @@
 }
 
 @media (max-width: 450px) {
-    .chapter-select-card {
-        padding: 20px;
+    .chapter-select-card,
+    .chapter-card-item {
+        padding: 15px;
     }
 
-    .chapter-select-card h2 {
+    .chapter-select-card h2,
+    .chapter-info h2 {
         font-size: 1.2rem;
     }
 

@@ -1,4 +1,36 @@
 /* =====================================
+   NAVBAR FIXA NO TOPO DA TELA (DESKTOP)
+===================================== */
+.navbar-expanded {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(11, 15, 25, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 30px;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(184, 145, 84, 0.2);
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* =====================================
    MENU HAMBÚRGUER E DRAWER MOBILE
 ===================================== */
 

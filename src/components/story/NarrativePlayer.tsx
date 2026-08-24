@@ -113,7 +113,7 @@ export function NarrativePlayer({
                 {
                     currentChapter:
                         Number(
-                            chapter.id
+                            String(chapter.id)
                             .replace(
                                 "capitulo-",
                                 ""
