@@ -16,6 +16,9 @@ export default function ChapterReader() {
 
     const [currentScene, setCurrentScene] = useState(0);
     const [currentCutscene, setCurrentCutscene] = useState(0);
+    
+    // Estado para controlar a abertura do menu de navegação de capítulos/cenas
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const chapter = chapterId ? chaptersMap[chapterId] : null;
     const scene = chapter ? chapter.scenes[currentScene] : null;
@@ -50,6 +53,13 @@ export default function ChapterReader() {
         }
     };
 
+    // Função para pular diretamente para uma cena específica pelo menu
+    const jumpToScene = (sceneIndex: number) => {
+        setCurrentScene(sceneIndex);
+        setCurrentCutscene(0);
+        setIsMenuOpen(false);
+    };
+
     if (!chapter || !scene) {
         return (
             <>
@@ -71,12 +81,63 @@ export default function ChapterReader() {
         <>
             <Navbar />
             <main className="chapter-reader-wrapper">
-                <button
-                    className="back-to-guide-btn"
-                    onClick={() => navigate("/historia")}
-                >
-                    ← Voltar aos Capítulos
-                </button>
+                
+                {/* BARRA DE CONTRASTE COM BOTÃO DE SUMÁRIO */}
+                <div className="reader-top-bar">
+                    <button
+                        className="back-to-guide-btn"
+                        onClick={() => navigate("/historia")}
+                    >
+                        ← Voltar aos Capítulos
+                    </button>
+
+                    <button
+                        className="open-index-btn"
+                        onClick={() => setIsMenuOpen(true)}
+                    >
+                        📖 Sumário / Cenas
+                    </button>
+                </div>
+
+                {/* MENU LATERAL (DRAWER) DE CAPÍTULOS E CENAS */}
+                {isMenuOpen && (
+                    <div className="reader-drawer-overlay" onClick={() => setIsMenuOpen(false)}>
+                        <div className="reader-drawer-content" onClick={(e) => e.stopPropagation()}>
+                            <div className="drawer-header">
+                                <h3>Índice do Capítulo</h3>
+                                <button className="close-drawer-btn" onClick={() => setIsMenuOpen(false)}>✕</button>
+                            </div>
+
+                            <div className="drawer-chapter-info">
+                                <span className="drawer-book-title">Eryon Chronicles</span>
+                                <h4>{chapter.title}</h4>
+                            </div>
+
+                            <div className="drawer-scenes-list">
+                                <p className="drawer-list-title">CENAS DISPONÍVEIS</p>
+                                {chapter.scenes.map((s, index) => (
+                                    <button
+                                        key={index}
+                                        className={`drawer-scene-item ${currentScene === index ? "active" : ""}`}
+                                        onClick={() => jumpToScene(index)}
+                                    >
+                                        <span className="scene-number-badge">Cena {index + 1}</span>
+                                        <span className="scene-title-text">{s.title}</span>
+                                    </button>
+                                ))}
+                            </div>
+
+                            <div className="drawer-footer">
+                                <button 
+                                    className="drawer-all-chapters-btn"
+                                    onClick={() => navigate("/historia")}
+                                >
+                                    Ver Todos os Capítulos
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                )}
 
                 <ChapterViewer
                     chapter={chapter}

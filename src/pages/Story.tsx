@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import type { Book } from "../types/chapter"; // Importação oficial do tipo Book
 import "../styles/story.css";
 
-// Estrutura expandida suportando Livros, Capítulos e Cenas
-const ERYON_BOOKS = [
+// Estrutura expandida suportando Livros, Capítulos e Cenas tipada com a interface Book
+const ERYON_BOOKS: Book[] = [
     {
         id: "caleb-fate",
         title: "Caleb Fate",
@@ -13,16 +14,32 @@ const ERYON_BOOKS = [
         chapters: [
             {
                 id: 1,
+                number: 1,
                 title: "O Despertar",
                 description: "Cada fragmento guarda uma memória. Descubra os primeiros passos de Caleb.",
                 status: "available",
                 scenes: [
-                    { id: "cena1", title: "Cena 1: O Despertar", duration: "Leitura / Interativo", isUnlocked: true },
-                    { id: "cena2", title: "Cena 2: Sombras no Horizonte", duration: "Leitura / Interativo", isUnlocked: true },
+                    { 
+                        id: "cena1", 
+                        title: "Cena 1: O Despertar", 
+                        order: 1, 
+                        duration: "Leitura / Interativo", 
+                        isUnlocked: true, 
+                        cutscenes: [] 
+                    },
+                    { 
+                        id: "cena2", 
+                        title: "Cena 2: Sombras no Horizonte", 
+                        order: 2, 
+                        duration: "Leitura / Interativo", 
+                        isUnlocked: true, 
+                        cutscenes: [] 
+                    },
                 ]
             },
             {
                 id: 2,
+                number: 2,
                 title: "Próximo Capítulo",
                 description: "Em breve...",
                 status: "coming_soon",
@@ -46,14 +63,14 @@ export default function Story() {
     // Mantém o Livro I aberto por padrão
     const [expandedBookId, setExpandedBookId] = useState<string>("caleb-fate");
     // Mantém o Capítulo 1 aberto por padrão para facilitar o acesso rápido
-    const [expandedChapters, setExpandedChapters] = useState<Record<number, boolean>>({ 1: true });
+    const [expandedChapters, setExpandedChapters] = useState<Record<string | number, boolean>>({ 1: true });
 
     const toggleBook = (bookId: string, status: string) => {
         if (status === "locked") return;
         setExpandedBookId(expandedBookId === bookId ? "" : bookId);
     };
 
-    const toggleChapter = (chapterId: number) => {
+    const toggleChapter = (chapterId: string | number) => {
         setExpandedChapters(prev => ({
             ...prev,
             [chapterId]: !prev[chapterId]
@@ -100,7 +117,7 @@ export default function Story() {
                                                     onClick={() => !isComingSoon && toggleChapter(chapter.id)}
                                                 >
                                                     <div className="chapter-info">
-                                                        <span className="chapter-number">Capítulo {chapter.id}</span>
+                                                        <span className="chapter-number">Capítulo {chapter.number}</span>
                                                         <h2>{chapter.title}</h2>
                                                         <p>{chapter.description}</p>
                                                     </div>
@@ -120,14 +137,13 @@ export default function Story() {
                                                                 className={`scene-item-card ${scene.isUnlocked ? "" : "locked-scene"}`}
                                                                 onClick={() => {
                                                                     if (scene.isUnlocked) {
-                                                                        // Redireciona para a leitura da cena (ex: /historia/1 ou rota específica da cena)
                                                                         navigate(`/historia/${chapter.id}`);
                                                                     }
                                                                 }}
                                                             >
                                                                 <div className="scene-details">
                                                                     <h4>{scene.title}</h4>
-                                                                    <span>⏱ {scene.duration}</span>
+                                                                    {scene.duration && <span>⏱ {scene.duration}</span>}
                                                                 </div>
                                                                 <div className="play-chapter-btn" style={{ textAlign: "center", marginTop: "8px", fontSize: "0.8rem" }}>
                                                                     {scene.isUnlocked ? "Iniciar Cena ▶" : "Bloqueada 🔒"}

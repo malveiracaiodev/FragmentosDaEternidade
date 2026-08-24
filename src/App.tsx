@@ -29,12 +29,9 @@ function App() {
                 />
 
                 {/* =================================
-                    ÁREA PRINCIPAL DO UNIVERSO (COM LAYOUT)
+                    ÁREA PRINCIPAL DO UNIVERSO (COM LAYOUT E NAVBAR)
                 ================================== */}
-                <Route
-                    element={<MainLayout />}
-                >
-
+                <Route element={<MainLayout />}>
                     <Route
                         path="/"
                         element={<Home />}
@@ -64,22 +61,19 @@ function App() {
                         path="/perfil"
                         element={<Profile />}
                     />
-
                 </Route>
 
                 {/* =================================
                     ÁREA DE AUTENTICAÇÃO
                 ================================== */}
-
                 <Route
                     path="/login"
                     element={<Login />}
                 />
 
                 {/* =================================
-                    FALLBACK
+                    FALLBACK (QUALQUER ROTA INVÁLIDA VAI PARA HOME)
                 ================================== */}
-
                 <Route
                     path="*"
                     element={<Home />}

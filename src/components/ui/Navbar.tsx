@@ -13,8 +13,20 @@ export function Navbar() {
 
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [showMobileMenu, setShowMobileMenu] = useState(false);
+    const [loginError, setLoginError] = useState<string | null>(null);
 
     const closeMenu = () => setShowMobileMenu(false);
+
+    const handleLogin = async () => {
+        try {
+            setLoginError(null);
+            await login();
+            setShowLoginModal(false);
+        } catch (error) {
+            console.error("Erro ao logar:", error);
+            setLoginError("Não foi possível realizar o login. Tente novamente.");
+        }
+    };
 
     return (
         <nav
@@ -67,7 +79,7 @@ export function Navbar() {
                         >
                             <div className="profile-circle">
                                 <img
-                                    src={user.photoURL ?? "/icone.jfif"}
+                                    src={user.photoURL || "/icone.jfif"} // Corrigido para lidar com strings vazias
                                     alt="Avatar do viajante"
                                     onError={(event) => {
                                         event.currentTarget.src = "/icone.jfif";
@@ -80,7 +92,7 @@ export function Navbar() {
                             <span className="profile-arrow">▼</span>
                         </Link>
 
-                        {/* Botão de Sair apenas no Desktop (no mobile vai para o menu lateral) */}
+                        {/* Botão de Sair apenas no Desktop */}
                         <button
                             onClick={logout}
                             className="icon-button logout-btn-desktop"
@@ -149,16 +161,15 @@ export function Navbar() {
                         <h3>Portal do Viajante</h3>
                         <p>Faça login para registrar suas jornadas em Eryon Chronicles.</p>
                         
+                        {loginError && (
+                            <p style={{ color: "#f87171", fontSize: "0.85rem", marginBottom: "10px" }}>
+                                {loginError}
+                            </p>
+                        )}
+
                         <button 
                             className="login-provider-button"
-                            onClick={async () => {
-                                try {
-                                    await login();
-                                    setShowLoginModal(false);
-                                } catch (error) {
-                                    console.error("Erro ao logar:", error);
-                                }
-                            }}
+                            onClick={handleLogin}
                         >
                             <span>🌐</span> Entrar com Google
                         </button>

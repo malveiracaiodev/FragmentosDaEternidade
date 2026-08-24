@@ -7,8 +7,15 @@ import "../../styles/hero.css";
 export function Hero(): React.JSX.Element {
     const navigate = useNavigate();
 
-    function openStory(): void {
+    // Direciona para o guia geral de capítulos/história
+    function handleOpenStory(): void {
         navigate("/historia");
+    }
+
+    // Direciona especificamente para o leitor do último fragmento/capítulo salvo
+    function handleContinueReading(): void {
+        // Exemplo: redireciona direto para o Capítulo I (ou resgate do localStorage futuramente)
+        navigate("/historia/capitulo-1"); 
     }
 
     return (
@@ -43,11 +50,11 @@ export function Hero(): React.JSX.Element {
                         <h2>Sua Jornada</h2>
                     </div>
 
-                    <button className="hero-action primary" onClick={openStory}>
+                    <button className="hero-action primary" onClick={handleOpenStory}>
                         ▶ Iniciar Jornada
                     </button>
 
-                    <button className="hero-action secondary" onClick={openStory}>
+                    <button className="hero-action secondary" onClick={handleContinueReading}>
                         ⟳ Continuar de Onde Parou
                     </button>
 
@@ -58,7 +65,7 @@ export function Hero(): React.JSX.Element {
                         <h3>Capítulo I</h3>
                         <p>O Despertar</p>
 
-                        <button className="hero-read" onClick={openStory}>
+                        <button className="hero-read" onClick={handleContinueReading}>
                             Ler Agora →
                         </button>
                     </div>
