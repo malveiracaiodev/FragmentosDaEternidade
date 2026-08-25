@@ -97,7 +97,7 @@ html, body {
     border-color: rgba(184, 145, 84, 0.4);
 }
 
-/* Estilo do container do perfil do usuário */
+/* Estilo do container do perfil do usuário (Geral) */
 .profile-container {
     display: flex;
     align-items: center;
@@ -312,21 +312,21 @@ html, body {
         display: none !important;
     }
 
-    /* Oculta apenas o texto e a seta no celular */
-    .profile-name, 
-    .profile-arrow {
+    /* Oculta apenas o texto e a seta DENTRO da navbar no celular */
+    .navbar-expanded .profile-name, 
+    .navbar-expanded .profile-arrow {
         display: none !important;
     }
 
-    /* Transforma o container do perfil em um botão circular compacto no mobile */
-    .profile-container {
+    /* Transforma o container do perfil APENAS na navbar em um botão circular compacto */
+    .navbar-expanded .profile-container {
         padding: 2px;
         border-radius: 50%;
         background: rgba(255, 255, 255, 0.05);
         border: 1px solid rgba(184, 145, 84, 0.3);
     }
 
-    .profile-circle {
+    .navbar-expanded .profile-circle {
         width: 36px;
         height: 36px;
         border: none;
