@@ -1,11 +1,29 @@
 /* =====================================
+   RESET GLOBAL E BLOQUEIO DE SCROLL LATERAL
+===================================== */
+
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #05080d;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/* =====================================
    PÁGINA PRINCIPAL DA HISTÓRIA
 ===================================== */
 
 .story-page-container {
     width: 100%;
+    max-width: 100vw;
     min-height: calc(100vh - 70px);
-    padding: 40px 20px 60px;
+    padding: 40px 15px 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -274,8 +292,9 @@
 .chapter-reader-wrapper,
 .narrative-wrapper {
     width: 100%;
+    max-width: 100vw;
     min-height: calc(100vh - 70px);
-    padding: 30px 20px 60px;
+    padding: 30px 15px 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
