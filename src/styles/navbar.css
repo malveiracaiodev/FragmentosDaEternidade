@@ -54,7 +54,6 @@ html, body {
 
 /* =====================================
    ESTILIZAÇÃO DOS LINKS DA NAVBAR (DESKTOP)
-   (Isso evita que fiquem invisíveis ou pretos)
 ===================================== */
 .navbar-expanded .nav-link,
 .navbar-links a {
@@ -122,12 +121,31 @@ html, body {
     border-radius: 50%;
     overflow: hidden;
     border: 1px solid #e0c18a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(184, 145, 84, 0.1);
 }
 
 .profile-circle img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Fallback caso o usuário não tenha foto cadastrada */
+.profile-icon-fallback {
+    width: 100%;
+    height: 100%;
+    color: #e0c18a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-icon-fallback svg {
+    width: 16px;
+    height: 16px;
 }
 
 .profile-name {
@@ -282,28 +300,23 @@ html, body {
    RESPONSIVIDADE E CORREÇÃO MOBILE
 ===================================== */
 @media (max-width: 768px) {
-    /* Exibe o menu hambúrguer */
     .mobile-menu-toggle {
         display: flex;
     }
 
-    /* Esconde os links do desktop para liberar espaço */
     .navbar-links {
         display: none !important;
     }
 
-    /* Esconde o botão de logout grande da barra superior no celular */
     .logout-btn-desktop {
         display: none !important;
     }
 
-    /* Oculta o nome de usuário escrito e a setinha no topo do celular */
     .profile-name, 
     .profile-arrow {
         display: none !important;
     }
 
-    /* Ajusta o espaçamento geral da barra expansível no mobile */
     .navbar-expanded {
         display: flex;
         justify-content: space-between;
