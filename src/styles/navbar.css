@@ -312,9 +312,24 @@ html, body {
         display: none !important;
     }
 
+    /* Oculta apenas o texto e a seta no celular */
     .profile-name, 
     .profile-arrow {
         display: none !important;
+    }
+
+    /* Transforma o container do perfil em um botão circular compacto no mobile */
+    .profile-container {
+        padding: 2px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(184, 145, 84, 0.3);
+    }
+
+    .profile-circle {
+        width: 36px;
+        height: 36px;
+        border: none;
     }
 
     .navbar-expanded {
