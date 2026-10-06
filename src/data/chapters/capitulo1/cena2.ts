@@ -127,7 +127,7 @@ unlocks: {
 
             media: [ 
                 { 
-                    id: "chap1-cena2-cut3",
+                    id: "cap1-cena2-cut3",
                     type: "video",
                     src: cap1cena2cut3
                 }
