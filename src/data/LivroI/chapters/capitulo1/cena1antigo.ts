@@ -1,4 +1,4 @@
-import type { Scene } from "../../../types/chapter";
+"import type { Scene } from "../../../types/chapter";
 import { Unlocks } from "../../../types/unlocks";
 
 export const chap1cena1: Scene = {
@@ -159,4 +159,4 @@ Como uma cicatriz no mundo.`,
       characters: [Unlocks.Characters.Caleb],
     },
   ],
-};
+};"
