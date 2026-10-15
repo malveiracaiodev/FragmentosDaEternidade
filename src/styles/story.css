@@ -6,7 +6,7 @@
     width: 100%;
     max-width: 100vw;
     min-height: calc(100vh - 70px);
-    padding: 20px 15px 60px; /* Ajustado padding superior para integrar com a navbar */
+    padding: 20px 15px 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -277,7 +277,7 @@
     width: 100%;
     max-width: 100vw;
     min-height: calc(100vh - 70px);
-    padding: 20px 15px 60px; /* Ajustado padding superior */
+    padding: 10px 15px 60px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -300,7 +300,9 @@
     align-items: center;
     width: 100%;
     max-width: 900px;
-    margin: 0 auto 20px auto;
+    margin: 10px auto 20px auto !important; /* Margem de segurança abaixo da navbar */
+    position: relative;
+    z-index: 2;
     box-sizing: border-box;
 }
 
@@ -452,7 +454,7 @@
 }
 
 /* =====================================
-   MÍDIAS DA CUTSCENE (VÍDEO, IMAGEM, ÁUDIO)
+   MÍDIAS DA CUTSCENE
 ===================================== */
 
 .cutscene-container,
@@ -617,7 +619,7 @@
     height: 100vh;
     background: rgba(5, 8, 13, 0.8);
     backdrop-filter: blur(8px);
-    z-index: 10000; /* Atualizado para 10000 para sobrepor a Navbar (9999) */
+    z-index: 100000; /* Acima de tudo */
     display: flex;
     justify-content: flex-end;
     animation: fadeInOverlay 0.3s ease forwards;
@@ -776,7 +778,7 @@
     .story-page-container,
     .chapter-reader-wrapper,
     .narrative-wrapper {
-        padding: 20px 15px 50px;
+        padding: 10px 15px 50px;
     }
 
     .chapter-guide-header h1 {
