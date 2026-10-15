@@ -2,13 +2,14 @@
 .navbar-container {
   width: 100%;
   max-width: 100vw;
-  background-color: rgba(15, 15, 22, 0.92);
+  background-color: rgba(12, 12, 18, 0.98); /* Fundo mais opaco para o texto de trás não vazar */
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  position: sticky;
+  position: fixed; /* Fixada no topo para acompanhar a leitura */
   top: 0;
-  z-index: 100;
-  box-sizing: border-border-box;
+  left: 0;
+  z-index: 1000; /* Garante que fique acima de qualquer elemento da página */
+  box-sizing: border-box;
   overflow: hidden; /* Evita rolagem horizontal indesejada */
 }
 
@@ -110,7 +111,7 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* Trava absoluta do tamanho da imagem */
+/* Trava absoluta do tamanho da imagem para evitar estouro */
 .profile-circle {
   width: 32px;
   height: 32px;
@@ -146,7 +147,7 @@
 
 .profile-arrow {
   font-size: 0.6rem;
-  color: #8a8f8;
+  color: #8a8f9d;
 }
 
 .logout-btn-desktop {
@@ -183,7 +184,7 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(4px);
-  z-index: 200;
+  z-index: 2000;
   display: flex;
 }
 
@@ -254,7 +255,7 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(6px);
-  z-index: 300;
+  z-index: 3000;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -327,19 +328,19 @@
 /* --- ADAPTAÇÃO RESPONSIVA (MOBILE / TABLET) --- */
 @media (max-width: 768px) {
   .navbar-links {
-    display: none; /* Oculta os links comuns da tela grande */
+    display: none;
   }
 
   .mobile-menu-toggle {
-    display: block; /* Exibe o botão de hambúrguer */
+    display: block;
   }
 
   .logout-btn-desktop {
-    display: none; /* Oculta o botão 'Sair' extra da barra para economizar espaço */
+    display: none;
   }
 
   .profile-name, .profile-arrow {
-    display: none; /* Deixa apenas a foto de perfil na navbar no mobile */
+    display: none;
   }
 
   .profile-container {
