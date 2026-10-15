@@ -65,13 +65,6 @@ export function Navbar() {
 
                 {/* DIREITA: Player/Áudio e Perfil do Usuário */}
                 <div className="navbar-right">
-                    <button
-                        className="icon-button audio-toggle-btn"
-                        title="Ativar ou pausar trilha sonora"
-                        aria-label="Controle da trilha sonora"
-                    >
-                        ⏸
-                    </button>
 
                     {!loading && user && (
                         <div className="user-nav-actions">
