@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
-import fallbackAvatar from "../../assets/icone.jfif"; // Importação garantida para o Vite/GitHub Pages
 import "../../styles/navbar.css";
 
 export function Navbar() {
@@ -24,12 +23,13 @@ export function Navbar() {
         }
     };
 
-    // Função utilitária para determinar a foto válida
+    // Função para obter a foto do Google/Gmail ou gerar iniciais como fallback
     const getAvatarSrc = () => {
         if (user && user.photoURL && user.photoURL.trim() !== "") {
-            return user.photoURL;
+            return user.photoURL; // Foto real da conta Google do usuário
         }
-        return fallbackAvatar;
+        const name = user?.displayName || "Viajante";
+        return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=1f1f2e&color=e2b874&bold=true`;
     };
 
     return (
@@ -85,7 +85,8 @@ export function Navbar() {
                                         src={getAvatarSrc()}
                                         alt="Avatar do viajante"
                                         onError={(e) => {
-                                            e.currentTarget.src = fallbackAvatar;
+                                            const name = user?.displayName || "Viajante";
+                                            e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=1f1f2e&color=e2b874&bold=true`;
                                         }}
                                     />
                                 </div>
