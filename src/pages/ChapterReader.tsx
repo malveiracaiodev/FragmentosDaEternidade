@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ChapterViewer } from "../components/story/ChapterViewer";
-import { capitulo1 } from "../data/chapters/capitulo1";
+// Importação corrigida para o novo caminho da pasta
+import { capitulo1 } from "../data/LivroI/chapters/capitulo1";
 import type { Chapter } from "../types/chapter";
 import { Navbar } from "../components/ui/Navbar";
 import "../styles/story.css";
@@ -11,7 +12,7 @@ const chaptersMap: Record<string, Chapter> = {
 };
 
 export default function ChapterReader() {
-    const { chapterId } = useParams<{ chapterId: string }>();
+    const { chapterId, sceneId } = useParams<{ chapterId: string; sceneId?: string }>();
     const navigate = useNavigate();
 
     const [currentScene, setCurrentScene] = useState(0);
@@ -21,6 +22,18 @@ export default function ChapterReader() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const chapter = chapterId ? chaptersMap[chapterId] : null;
+
+    // Se houver um sceneId na URL, seleciona o índice da cena correspondente
+    useEffect(() => {
+        if (chapter && sceneId) {
+            const foundIndex = chapter.scenes.findIndex((s) => s.id === sceneId);
+            if (foundIndex !== -1) {
+                setCurrentScene(foundIndex);
+                setCurrentCutscene(0);
+            }
+        }
+    }, [chapter, sceneId]);
+
     const scene = chapter ? chapter.scenes[currentScene] : null;
 
     const nextCutscene = () => {
