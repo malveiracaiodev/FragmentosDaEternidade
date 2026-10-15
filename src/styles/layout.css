@@ -22,10 +22,11 @@
     min-width: 0;
     display: block;
     position: relative;
-    z-index: 1; /* Mantém o conteúdo na camada base inferior à navbar */
+    z-index: 1; /* Camada base inferior à navbar */
 
-    /* Empurra fisicamente a página para baixo da barra de 60px */
-    padding-top: 75px !important; 
+    /* CORRIGIDO: margin-top físico de 60px obriga o conteúdo a começar abaixo da navbar */
+    margin-top: 60px !important; 
+    padding-top: 15px; 
     box-sizing: border-box;
     overflow-x: hidden;
 }
