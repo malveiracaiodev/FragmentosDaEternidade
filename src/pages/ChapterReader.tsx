@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { ChapterViewer } from "../components/story/ChapterViewer";
-// Importação corrigida para o novo caminho da pasta
+// Importação para a nova localização do Capítulo 1
 import { capitulo1 } from "../data/LivroI/chapters/capitulo1";
 import type { Chapter } from "../types/chapter";
 import { Navbar } from "../components/ui/Navbar";
