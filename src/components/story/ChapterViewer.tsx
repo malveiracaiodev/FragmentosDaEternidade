@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import type { Chapter } from "../../types/chapter";
 import { SceneViewer } from "./SceneViewer";
 import "../../styles/story.css";
