@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import type { Book } from "../types/chapter"; // Importação oficial do tipo Book
+import { cena1 } from "../data/LivroI/chapters/capitulo1/Cena1"; // Dados atualizados da Cena 1
 import "../styles/story.css";
 
 // Estrutura expandida suportando Livros, Capítulos e Cenas tipada com a interface Book
@@ -15,23 +16,31 @@ const ERYON_BOOKS: Book[] = [
             {
                 id: 1,
                 number: 1,
-                title: "O Despertar",
+                title: "O Silêncio",
                 description: "Cada fragmento guarda uma memória. Descubra os primeiros passos de Caleb.",
                 status: "available",
                 scenes: [
                     { 
-                        id: "cena1", 
-                        title: "Cena 1: O Despertar", 
-                        order: 1, 
-                        duration: "Leitura / Interativo", 
+                        id: cena1.id, 
+                        title: `Cena 1: ${cena1.title}`, 
+                        order: cena1.order, 
+                        duration: "Leitura / Vídeo", 
+                        isUnlocked: true, 
+                        cutscenes: cena1.cutscenes 
+                    },
+                    { 
+                        id: "chap1-cena2", 
+                        title: "Cena 2: A Chama Azul", 
+                        order: 2, 
+                        duration: "Leitura / Vídeo", 
                         isUnlocked: true, 
                         cutscenes: [] 
                     },
                     { 
-                        id: "cena2", 
-                        title: "Cena 2: Sombras no Horizonte", 
-                        order: 2, 
-                        duration: "Leitura / Interativo", 
+                        id: "chap1-cena3", 
+                        title: "Cena 3: A Cidade Afundada", 
+                        order: 3, 
+                        duration: "Leitura / Vídeo", 
                         isUnlocked: true, 
                         cutscenes: [] 
                     },
@@ -137,7 +146,8 @@ export default function Story() {
                                                                 className={`scene-item-card ${scene.isUnlocked ? "" : "locked-scene"}`}
                                                                 onClick={() => {
                                                                     if (scene.isUnlocked) {
-                                                                        navigate(`/historia/${chapter.id}`);
+                                                                        // Redireciona para a cena específica (ex: /historia/1/chap1-cena1)
+                                                                        navigate(`/historia/${chapter.id}/${scene.id}`);
                                                                     }
                                                                 }}
                                                             >
