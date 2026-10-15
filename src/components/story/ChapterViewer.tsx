@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import type { Chapter } from "../../types/chapter";
 import { SceneViewer } from "./SceneViewer";
 import "../../styles/story.css";
@@ -21,6 +22,14 @@ export function ChapterViewer({
     previousScene,
     nextScene,
 }: ChapterViewerProps) {
+
+    // Faz a tela rolar suavemente para o topo sempre que a cena mudar
+    useEffect(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    }, [currentScene]);
 
     const scene = chapter.scenes[currentScene];
 
@@ -70,3 +79,5 @@ export function ChapterViewer({
         </section>
     );
 }
+
+export default ChapterViewer;
