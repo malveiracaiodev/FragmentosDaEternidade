@@ -1,6 +1,5 @@
 import type { Chapter } from "../../../../types/chapter";
 import { cena1 } from "./Cena1";
-import { cena2 } from "./cena2";
 
 export const capitulo1: Chapter = {
   id: "capitulo-1",
@@ -11,7 +10,6 @@ export const capitulo1: Chapter = {
     "O início da jornada de Caleb em um mundo esquecido, onde os Fragmentos começam a despertar.",
   scenes: [
     cena1,
-    cena2,
   ],
 };
 
