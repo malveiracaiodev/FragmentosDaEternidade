@@ -1,7 +1,6 @@
 import type { Chapter } from "../../../../types/chapter";
-import { cena1 } from "./Cena1"; // Se o seu arquivo for cena1.ts (minúsculo), ajuste para "./cena1"
-"import { cena2 } from "./cena2";"
-"import { cena3 } from "./cena3";"
+import { cena1 } from "./Cena1";
+import { cena2 } from "./cena2";
 
 export const capitulo1: Chapter = {
   id: "capitulo-1",
@@ -13,6 +12,6 @@ export const capitulo1: Chapter = {
   scenes: [
     cena1,
     cena2,
-    cena3,
   ],
 };
+
