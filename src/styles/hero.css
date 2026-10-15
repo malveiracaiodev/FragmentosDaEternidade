@@ -14,8 +14,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    /* Aumentamos um pouco o padding-top para afastar da navbar fixa */
-    padding: 70px 16px 20px 16px; 
+    /* CORRIGIDO: 85px de padding-top garante que a logo comece perfeitamente abaixo da Navbar fixa de 60px */
+    padding: 85px 16px 20px 16px !important; 
     background: #060811;
     box-sizing: border-box;
 }
