@@ -22,9 +22,10 @@ function App() {
 
                 {/* =================================
                     ÁREA DE LEITURA ISOLADA (SEM NAVBAR/HUD)
+                    * Atualizado para aceitar o :sceneId opcional
                 ================================== */}
                 <Route
-                    path="/historia/:chapterId"
+                    path="/historia/:chapterId/:sceneId?"
                     element={<ChapterReader />}
                 />
 
