@@ -23,13 +23,13 @@ export function ChapterViewer({
     nextScene,
 }: ChapterViewerProps) {
 
-    // Faz a tela rolar suavemente para o topo sempre que a cena mudar
+    // Faz a tela rolar suavemente para o topo sempre que a cena ou a cutscene mudar
     useEffect(() => {
         window.scrollTo({
             top: 0,
             behavior: "smooth"
         });
-    }, [currentScene]);
+    }, [currentScene, currentCutscene]);
 
     const scene = chapter.scenes[currentScene];
 
