@@ -2,15 +2,16 @@
 .navbar-container {
   width: 100%;
   max-width: 100vw;
-  background-color: rgba(12, 12, 18, 0.98); /* Fundo opaco para não misturar com o texto que passa atrás */
+  background-color: rgba(12, 12, 18, 0.98);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  position: fixed; /* Fixada no topo da tela */
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999; /* Prioridade máxima de empilhamento para nunca ser coberta */
+  z-index: 99999 !important; /* Prioridade máxima absoluta de camada */
+  isolation: isolate; /* Força um novo contexto de empilhamento isolado */
   box-sizing: border-box;
-  overflow: hidden; /* Evita que itens vazem e criem rolagem lateral */
+  overflow: hidden;
 }
 
 .navbar-content {
@@ -111,7 +112,6 @@
   background: rgba(255, 255, 255, 0.08);
 }
 
-/* Trava rígida no tamanho da foto do perfil */
 .profile-circle {
   width: 32px;
   height: 32px;
@@ -184,7 +184,7 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.7);
   backdrop-filter: blur(4px);
-  z-index: 10000; /* Acima do topo da página */
+  z-index: 100000; /* Acima da navbar principal */
   display: flex;
 }
 
@@ -194,7 +194,7 @@
   background: #111118;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
   padding: 1.5rem;
-  padding-top: 1rem; /* Ajustado para dar respiro interno ao título e botão fechar */
+  padding-top: 1rem;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -257,7 +257,7 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(6px);
-  z-index: 10001; /* Camada superior a todas as outras */
+  z-index: 100001; /* Acima de todas as camadas */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -327,7 +327,7 @@
   margin-bottom: 10px;
 }
 
-/* --- ADAPTAÇÃO RESPONSIVA (MOBILE / TABLET) --- */
+/* --- ADAPTAÇÃO RESPONSIVA --- */
 @media (max-width: 768px) {
   .navbar-links {
     display: none;
