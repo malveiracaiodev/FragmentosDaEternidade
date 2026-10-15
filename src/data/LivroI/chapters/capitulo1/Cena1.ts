@@ -1,5 +1,5 @@
-import type { Scene } from "../../../types/chapter";
-import { Unlocks } from "../../../types/unlocks";
+import type { Scene } from "../../../../types/chapter";
+import { Unlocks } from "../../../../types/unlocks";
 
 // Importação local do segundo vídeo
 import video2Local from "./Videos/cap1cena1video2.mp4";
