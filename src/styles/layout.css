@@ -28,6 +28,10 @@
 
     position: relative;
 
+    /* REGRAS ADICIONADAS: Compensa a altura da Navbar fixa (60px + folga) */
+    padding-top: 75px;
+    box-sizing: border-box;
+
     overflow-x: hidden;
 }
 
@@ -44,7 +48,7 @@
 
 
 /* ================================
-   CONTAINERS GERAIS
+   CONTAINERS GERAIS DE PÁGINAS
 ================================ */
 
 .container,
@@ -63,15 +67,19 @@
 
 
 /* ================================
-   MOBILE
+   AJUSTE RESPONSIVO (MOBILE)
 ================================ */
 
 @media (max-width: 768px) {
 
+    /* No mobile dá uma folga levemente maior para os botões do topo do leitor */
+    .page-content {
+        padding-top: 75px;
+    }
+
     .container,
     .content-container,
     .page-container {
-
         padding-left: 1rem;
         padding-right: 1rem;
     }
