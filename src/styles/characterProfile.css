@@ -1,6 +1,6 @@
 /* ==========================================
    CHARACTER PROFILE
-   Fragmentos da Eternidade - Lore System
+   Eryon Chronicles - Lore System
 ========================================== */
 
 
@@ -8,7 +8,8 @@
 
     max-width: 1200px;
 
-    margin: 120px auto 60px;
+    /* Ajustado para 20px para alinhar perfeitamente com o layout global da Navbar fixa */
+    margin: 20px auto 60px;
 
     padding: 30px;
 
@@ -751,7 +752,8 @@ blockquote {
 
     .character-profile {
 
-        margin-top:100px;
+        /* Ajustado para evitar espaçamento excessivo no mobile */
+        margin-top: 10px;
 
         padding:15px;
 
