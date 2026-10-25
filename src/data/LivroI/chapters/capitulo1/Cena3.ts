@@ -1,6 +1,6 @@
 import type { Scene } from "../../../../types/chapter";
 // Importação do vídeo local da Cena 3 (ajuste o caminho da pasta de vídeos se necessário)
-import video1Local from "./Videos/cap1cena3video1.mp4";
+import video1Local from "./Videos/Cap1cena3video1.mp4";
 
 export const cena3: Scene = {
   id: "chap1-cena3",
