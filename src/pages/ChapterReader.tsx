@@ -51,26 +51,46 @@ export default function ChapterReader() {
     const previousScene = () => {
         if (currentScene > 0) {
             const prevSceneIndex = currentScene - 1;
-            const lastCutsceneIndex = chapter!.scenes[prevSceneIndex].cutscenes.length - 1;
+            const targetScene = chapter!.scenes[prevSceneIndex];
+            const lastCutsceneIndex = targetScene.cutscenes.length - 1;
+            
             setCurrentScene(prevSceneIndex);
             setCurrentCutscene(lastCutsceneIndex);
+            
+            if (chapterId) {
+                navigate(`/historia/${chapterId}/${targetScene.id}`);
+            }
         }
     };
 
     const nextScene = () => {
         if (chapter && currentScene < chapter.scenes.length - 1) {
-            setCurrentScene((prev) => prev + 1);
+            const nextSceneIndex = currentScene + 1;
+            const targetScene = chapter.scenes[nextSceneIndex];
+            
+            setCurrentScene(nextSceneIndex);
             setCurrentCutscene(0);
+            
+            if (chapterId) {
+                navigate(`/historia/${chapterId}/${targetScene.id}`);
+            }
         } else {
             navigate("/historia");
         }
     };
 
-    // Função para pular diretamente para uma cena específica pelo menu
+    // Função para pular diretamente para uma cena específica pelo menu (agora sincronizando a URL)
     const jumpToScene = (sceneIndex: number) => {
+        if (!chapter) return;
+        const targetScene = chapter.scenes[sceneIndex];
+        
         setCurrentScene(sceneIndex);
         setCurrentCutscene(0);
         setIsMenuOpen(false);
+        
+        if (targetScene && chapterId) {
+            navigate(`/historia/${chapterId}/${targetScene.id}`);
+        }
     };
 
     if (!chapter || !scene) {
