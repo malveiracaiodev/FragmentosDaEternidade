@@ -26,8 +26,8 @@ Chamas. Uma chama azul-escura envolvendo sua mão, pulsando de forma silenciosa,
       media: [
         {
           id: "caleb-chama",
-          type: "iframe", // Alterado para iframe para suportar o player do YouTube
-          src: "https://www.youtube.com/embed/CaxG0Th1QjA",
+          type: "video", // Mantido como "video" para respeitar a tipagem do projeto
+          src: "https://www.youtube.com/embed/CaxG0Th1QjA", // (Nota: se o player que lê "video" for uma tag <video> nativa do HTML, o YouTube não vai tocar aqui)
         },
         {
           id: "chama-azul",
