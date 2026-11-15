@@ -35,7 +35,7 @@ export function Navbar() {
     return (
         <nav className="navbar-container" aria-label="Navegação principal">
             <div className="navbar-content">
-                
+
                 {/* ESQUERDA: Botão Hambúrguer (Mobile) e Links Principais (Desktop) */}
                 <div className="navbar-left">
                     <button
@@ -77,7 +77,9 @@ export function Navbar() {
                                     <img
                                         src={getAvatarSrc()}
                                         alt="Avatar do viajante"
+                                        referrerPolicy="no-referrer"
                                         onError={(e) => {
+                                            e.currentTarget.onerror = null; // Evita loop infinito
                                             const name = user?.displayName || "Viajante";
                                             e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=1f1f2e&color=e2b874&bold=true`;
                                         }}
@@ -159,7 +161,7 @@ export function Navbar() {
                     <div className="login-modal-content" onClick={(e) => e.stopPropagation()}>
                         <h3>Portal do Viajante</h3>
                         <p>Faça login para registrar suas jornadas em Eryon Chronicles.</p>
-                        
+
                         {loginError && (
                             <p className="login-error-message">
                                 {loginError}
