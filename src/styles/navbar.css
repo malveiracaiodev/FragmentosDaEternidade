@@ -326,7 +326,7 @@
   margin-bottom: 10px;
 }
 
-/* --- ADAPTAÇÃO RESPONSIVA --- */
+/* --- ADAPTAÇÃO RESPONSIVA CORRIGIDA PARA O PERFIL --- */
 @media (max-width: 768px) {
   .navbar-links {
     display: none;
@@ -340,13 +340,30 @@
     display: none;
   }
 
+  /* Oculta o nome e a setinha no mobile, mas mantém o container da foto visível */
   .profile-name, .profile-arrow {
     display: none;
   }
 
   .profile-container {
-    padding: 0;
-    border: none;
-    background: transparent;
+    padding: 2px !important;
+    border: 1px solid rgba(226, 184, 116, 0.4) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .profile-circle {
+    width: 32px !important;
+    height: 32px !important;
+    min-width: 32px !important;
+    min-height: 32px !important;
+    border-radius: 50% !important;
+    overflow: hidden !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 }
