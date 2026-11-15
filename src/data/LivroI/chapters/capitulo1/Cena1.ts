@@ -52,9 +52,7 @@ Caleb arregalou os olhos, esperando dor… mas ela não veio. Em vez disso, sent
 
 Confuso, ele se levantou com cuidado. Seus olhos voltaram a explorar o lugar. A cidade não tinha saída visível. Ao redor, uma enorme formação rochosa cercava tudo — alta, contínua, sufocante. Parecia uma montanha.
 
-{media:explorando-ruinas}
-
-> **✨ Personagem Desbloqueado: Caleb**`,
+{media:explorando-ruinas}`,
       media: [
         {
           id: "despertar",
@@ -82,6 +80,12 @@ Confuso, ele se levantou com cuidado. Seus olhos voltaram a explorar o lugar. A 
           src: video3Cena2Local,
         },
       ],
+      unlocks: {
+        reward: {
+          id: Unlocks.Characters.Caleb,
+          name: "Caleb",
+        },
+      },
       characters: [Unlocks.Characters.Caleb],
     },
   ],
