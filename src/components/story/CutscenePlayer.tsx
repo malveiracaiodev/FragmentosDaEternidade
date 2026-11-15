@@ -99,6 +99,11 @@ export function CutscenePlayer({
                             );
                         }
 
+                        // Ignora blocos vazios gerados por quebras extras
+                        if (!block.trim()) {
+                            return null;
+                        }
+
                         // =========================
                         // BLOCO DE TEXTO
                         // =========================
@@ -107,34 +112,7 @@ export function CutscenePlayer({
                                 key={index}
                                 className="cutscene-content"
                             >
-                                {
-                                    block
-                                        .split("\n")
-                                        .map(
-                                            (
-                                                line,
-                                                lineIndex,
-                                                array
-                                            ) => (
-                                                <Fragment
-                                                    key={lineIndex}
-                                                >
-                                                    {line}
-
-                                                    {
-                                                        lineIndex <
-                                                        array.length - 1
-                                                        && (
-                                                            <>
-                                                                <br />
-                                                                <br />
-                                                            </>
-                                                        )
-                                                    }
-                                                </Fragment>
-                                            )
-                                        )
-                                }
+                                {block.trim()}
                             </p>
                         );
                     })
@@ -143,3 +121,5 @@ export function CutscenePlayer({
         </div>
     );
 }
+
+export default CutscenePlayer;
