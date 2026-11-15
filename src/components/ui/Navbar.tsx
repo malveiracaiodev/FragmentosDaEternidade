@@ -23,12 +23,24 @@ export function Navbar() {
         }
     };
 
-    // Função para obter a foto do Google/Gmail ou gerar iniciais como fallback
+    // Função blindada para capturar a foto do usuário independentemente de onde venha no objeto
     const getAvatarSrc = () => {
-        if (user && user.photoURL && user.photoURL.trim() !== "") {
-            return user.photoURL; // Foto real da conta Google do usuário
+        console.log("🔍 [Navbar] Objeto user recebido:", user);
+
+        // Tenta pegar de todas as propriedades comuns onde bibliotecas de auth guardam a foto
+        const possiblePhoto = 
+            (user as any)?.photoURL || 
+            (user as any)?.photo || 
+            (user as any)?.user_metadata?.avatar_url || 
+            (user as any)?.providerData?.[0]?.photoURL;
+
+        if (possiblePhoto && typeof possiblePhoto === "string" && possiblePhoto.trim() !== "") {
+            console.log("✅ [Navbar] Foto encontrada:", possiblePhoto);
+            return possiblePhoto;
         }
-        const name = user?.displayName || "Viajante";
+
+        console.log("⚠️ [Navbar] Nenhuma foto encontrada no user, usando UI Avatars de fallback.");
+        const name = user?.displayName || (user as any)?.name || "Viajante";
         return `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=1f1f2e&color=e2b874&bold=true`;
     };
 
@@ -79,6 +91,7 @@ export function Navbar() {
                                         alt="Avatar do viajante"
                                         referrerPolicy="no-referrer"
                                         onError={(e) => {
+                                            console.error("❌ [Navbar] Erro ao carregar a imagem no img tag, acionando fallback.");
                                             e.currentTarget.onerror = null; // Evita loop infinito
                                             const name = user?.displayName || "Viajante";
                                             e.currentTarget.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(name)}&background=1f1f2e&color=e2b874&bold=true`;
