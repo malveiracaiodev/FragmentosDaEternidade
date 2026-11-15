@@ -3,255 +3,91 @@ import {
     useState
 } from "react";
 
-
 import { useAuth } from "../../hooks/useAuth";
-
-
-import {
-    PlayerService
-} from "../../services/player/PlayerService";
-
-
-import type {
-    UnlockId
-} from "../../types/unlocks";
-
-
+import { PlayerService } from "../../services/player/PlayerService";
+import type { UnlockId } from "../../types/unlocks";
 
 interface UnlockButtonProps {
-
-
-    unlocks:{
-
-        reward?:{
-
-            id:UnlockId;
-
-            name:string;
-
+    unlocks: {
+        reward?: {
+            id: UnlockId;
+            name: string;
         };
-
     };
-
 }
-
-
-
-
 
 export default function UnlockButton({
-
     unlocks
+}: UnlockButtonProps) {
 
-}:UnlockButtonProps){
+    const { user } = useAuth();
+    const [unlocked, setUnlocked] = useState(false);
+    const [loading, setLoading] = useState(true);
+    const [saving, setSaving] = useState(false);
 
-
-
-    const {user}=useAuth();
-
-
-
-    const [unlocked,setUnlocked]
-    =
-    useState(false);
-
-
-
-    const [loading,setLoading]
-    =
-    useState(true);
-
-
-
-    const [saving,setSaving]
-    =
-    useState(false);
-
-
-
-
-
-    useEffect(()=>{
-
-
-        async function check(){
-
-
-            if(
-                !user ||
-                !unlocks.reward
-            ){
-
+    useEffect(() => {
+        async function check() {
+            if (!user || !unlocks.reward) {
                 setLoading(false);
-
                 return;
-
             }
 
-
-
-            const result =
-            await PlayerService.isUnlocked(
-
-                user.uid,
-
-                unlocks.reward.id
-
-            );
-
-
-            setUnlocked(result);
-
-
-            setLoading(false);
-
-
+            try {
+                const result = await PlayerService.isUnlocked(
+                    user.uid,
+                    unlocks.reward.id
+                );
+                setUnlocked(result);
+            } catch (error) {
+                console.error("Erro ao verificar desbloqueio:", error);
+            } finally {
+                setLoading(false);
+            }
         }
-
-
 
         check();
+    }, [user, unlocks.reward?.id]);
 
-
-
-    },[
-        user,
-        unlocks.reward?.id
-    ]);
-
-
-
-
-
-
-
-    async function handleUnlock(){
-
-
-
-        if(
-            !user ||
-            !unlocks.reward
-        ){
-
-            alert(
-                "Faça login para salvar sua jornada."
-            );
-
+    async function handleUnlock() {
+        if (!user || !unlocks.reward) {
+            alert("Faça login para salvar sua jornada.");
             return;
-
         }
 
-
-
-        try{
-
-
+        try {
             setSaving(true);
-
-
-
             await PlayerService.unlock(
-
                 user.uid,
-
                 unlocks.reward.id
-
             );
-
-
-
             setUnlocked(true);
-
-
-
-        }
-        catch(error){
-
-            console.error(
-                "Erro ao desbloquear:",
-                error
-            );
-
-        }
-        finally{
-
+        } catch (error) {
+            console.error("Erro ao desbloquear:", error);
+        } finally {
             setSaving(false);
-
         }
-
-
     }
 
-
-
-
-
-
-
-    if(
-        loading ||
-        !unlocks.reward
-    ){
-
+    if (loading || !unlocks.reward) {
         return null;
-
     }
-
-
-
-
-
 
     return (
-
         <button
-
-            className={
-                unlocked
-                ?
-                "unlock-button unlocked"
-                :
-                "unlock-button"
-            }
-
-
-            disabled={
-                unlocked ||
-                saving
-            }
-
-
+            type="button"
+            className={`unlock-button ${unlocked ? "unlocked" : ""}`}
+            disabled={unlocked || saving}
             onClick={handleUnlock}
-
         >
-
-
-        {
-            unlocked
-
-            ?
-
-            "✓ CONTEÚDO DESBLOQUEADO"
-
-            :
-
-            saving
-
-            ?
-
-            "⏳ SALVANDO..."
-
-            :
-
-            `🔓 DESBLOQUEAR ${unlocks.reward.name}`
-
-        }
-
-
+            {unlocked ? (
+                <>✓ CONTEÚDO DESBLOQUEADO: {unlocks.reward.name}</>
+            ) : saving ? (
+                "⏳ SALVANDO..."
+            ) : (
+                `🔓 DESBLOQUEAR ${unlocks.reward.name}`
+            )}
         </button>
-
     );
-
-
 }
+
+export { UnlockButton };
