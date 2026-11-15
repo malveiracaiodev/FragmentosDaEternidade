@@ -2,13 +2,13 @@
 .navbar-container {
   width: 100%;
   height: 60px;
-  background-color: #0c0c12 !important; /* Fundo sólido para blindar contra transparências */
+  background-color: #0c0c12 !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
-  z-index: 2147483647 !important; /* Prioridade máxima absoluta de camada do CSS */
+  z-index: 2147483647 !important;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -67,34 +67,14 @@
   flex-shrink: 0;
 }
 
-.icon-button {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #e2b874;
-  border-radius: 8px;
-  width: 36px;
-  height: 36px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: background 0.2s, border-color 0.2s;
-  flex-shrink: 0;
-}
-
-.icon-button:hover {
-  background: rgba(226, 184, 116, 0.15);
-  border-color: #e2b874;
-}
-
-/* --- PERFIL DO USUÁRIO --- */
-.user-nav-actions {
+/* --- PERFIL DO USUÁRIO NA NAVBAR (ISOLADO COM .navbar-container) --- */
+.navbar-container .user-nav-actions {
   display: flex;
   align-items: center;
   gap: 0.75rem;
 }
 
-.profile-container {
+.navbar-container .profile-container {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -107,11 +87,11 @@
   transition: background 0.2s ease;
 }
 
-.profile-container:hover {
+.navbar-container .profile-container:hover {
   background: rgba(255, 255, 255, 0.08);
 }
 
-.profile-circle {
+.navbar-container .profile-circle {
   width: 32px !important;
   height: 32px !important;
   min-width: 32px !important;
@@ -128,14 +108,14 @@
   flex-shrink: 0 !important;
 }
 
-.profile-circle img {
+.navbar-container .profile-circle img {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
   display: block !important;
 }
 
-.profile-name {
+.navbar-container .profile-name {
   font-size: 0.85rem;
   font-weight: 500;
   max-width: 90px;
@@ -144,7 +124,7 @@
   text-overflow: ellipsis;
 }
 
-.profile-arrow {
+.navbar-container .profile-arrow {
   font-size: 0.6rem;
   color: #8a8f9d;
 }
@@ -326,7 +306,7 @@
   margin-bottom: 10px;
 }
 
-/* --- ADAPTAÇÃO RESPONSIVA CORRIGIDA PARA O PERFIL --- */
+/* --- ADAPTAÇÃO RESPONSIVA DA NAVBAR --- */
 @media (max-width: 768px) {
   .navbar-links {
     display: none;
@@ -340,12 +320,12 @@
     display: none;
   }
 
-  /* Oculta o nome e a setinha no mobile, mas mantém o container da foto visível */
-  .profile-name, .profile-arrow {
+  .navbar-container .profile-name, 
+  .navbar-container .profile-arrow {
     display: none;
   }
 
-  .profile-container {
+  .navbar-container .profile-container {
     padding: 2px !important;
     border: 1px solid rgba(226, 184, 116, 0.4) !important;
     background: rgba(255, 255, 255, 0.05) !important;
@@ -355,7 +335,7 @@
     justify-content: center !important;
   }
 
-  .profile-circle {
+  .navbar-container .profile-circle {
     width: 32px !important;
     height: 32px !important;
     min-width: 32px !important;
