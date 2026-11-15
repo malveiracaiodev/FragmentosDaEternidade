@@ -84,6 +84,7 @@ Confuso, ele se levantou com cuidado. Seus olhos voltaram a explorar o lugar. A 
         reward: {
           id: Unlocks.Characters.Caleb,
           name: "Caleb",
+          type: "character",
         },
       },
       characters: [Unlocks.Characters.Caleb],
