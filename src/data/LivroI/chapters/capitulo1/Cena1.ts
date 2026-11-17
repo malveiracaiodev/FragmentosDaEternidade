@@ -1,10 +1,11 @@
 import type { Scene } from "../../../../types/chapter";
 import { Unlocks } from "../../../../types/unlocks";
 
-// Importação dos vídeos locais da Cena 1 e Cena 2 unificadas (removido o vídeo redundante)
+// Importação dos vídeos locais da Cena 1 e o trecho inicial da antiga Cena 3
 import video1Cena2Local from "./Videos/cap1cena2video1.mp4";
 import video2Cena2Local from "./Videos/Cap1cena2video2.mp4";
 import video3Cena2Local from "./Videos/Cap1cena2video3.mp4";
+import videoEscalandoLocal from "./Videos/Cap1cena3video1.mp4"; // Vídeo da escalada incorporado da cena 3
 
 export const cena1: Scene = {
   id: "chap1-cena1",
@@ -35,7 +36,7 @@ Ruínas de uma cidade que claramente haviam sido palco de algo grandioso… e de
 
 Não havia sinais de vida. Nenhum som. Apenas abandono.
 
-Sua mente estava vazia. Nada vinha. Nenhuma memória. Nenhum rosto. Nenhum histórico. Apenas um nome.
+Sua mente estava vazia. Nada vinha. Nenhuma memória. Nenhum rosto. Nenhuma história. Apenas um nome.
 
 — Caleb…
 
@@ -51,7 +52,15 @@ Caleb arregalou os olhos, esperando dor… mas ela não veio. Em vez disso, sent
 
 Confuso, ele se levantou com cuidado. Seus olhos voltaram a explorar o lugar. A cidade não tinha saída visível. Ao redor, uma enorme formação rochosa cercava tudo — alta, contínua, sufocante. Parecia uma montanha.
 
-{media:explorando-ruinas}`,
+{media:explorando-ruinas}
+
+Sem pensar muito, Caleb caminhou até sua base. Vinhas grossas se estendiam pelas pedras, como se a própria natureza tentasse engolir aquele lugar esquecido. Ele começou a escalar. O esforço era grande, mas algo dentro dele o impulsionava. Como se aquela energia ainda pulsasse em seu corpo.
+
+{media:caleb-escalando}
+
+Após alguns minutos, alcançou o topo. E então… parou. Virou-se lentamente. Seu olhar encontrou a cidade novamente — mas, agora, de cima.
+
+E foi ali que percebeu. Não era uma montanha. Nunca foi. A cidade… havia sido empurrada para baixo. Afundada. Como uma cicatriz no mundo.`,
       media: [
         {
           id: "despertar",
@@ -72,6 +81,11 @@ Confuso, ele se levantou com cuidado. Seus olhos voltaram a explorar o lugar. A 
           id: "explorando-ruinas",
           type: "video",
           src: video3Cena2Local,
+        },
+        {
+          id: "caleb-escalando",
+          type: "video",
+          src: videoEscalandoLocal,
         },
       ],
       unlocks: {
