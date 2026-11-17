@@ -1,8 +1,7 @@
 import type { Scene } from "../../../../types/chapter";
 import { Unlocks } from "../../../../types/unlocks";
 
-// Importação dos vídeos locais da Cena 1 e Cena 2 unificadas
-import video1Cena1Local from "./Videos/cap1cena1video2.mp4";
+// Importação dos vídeos locais da Cena 1 e Cena 2 unificadas (removido o vídeo redundante)
 import video1Cena2Local from "./Videos/cap1cena2video1.mp4";
 import video2Cena2Local from "./Videos/Cap1cena2video2.mp4";
 import video3Cena2Local from "./Videos/Cap1cena2video3.mp4";
@@ -36,7 +35,7 @@ Ruínas de uma cidade que claramente haviam sido palco de algo grandioso… e de
 
 Não havia sinais de vida. Nenhum som. Apenas abandono.
 
-Sua mente estava vazia. Nada vinha. Nenhuma memória. Nenhum rosto. Nenhuma história. Apenas um nome.
+Sua mente estava vazia. Nada vinha. Nenhuma memória. Nenhum rosto. Nenhum histórico. Apenas um nome.
 
 — Caleb…
 
@@ -62,15 +61,10 @@ Confuso, ele se levantou com cuidado. Seus olhos voltaram a explorar o lugar. A 
         {
           id: "olhando-ao-redor",
           type: "video",
-          src: video1Cena1Local,
-        },
-        {
-          id: "caleb-sentando",
-          type: "video",
           src: video1Cena2Local,
         },
         {
-          id: "chama-azul",
+          id: "caleb-sentando",
           type: "video",
           src: video2Cena2Local,
         },
