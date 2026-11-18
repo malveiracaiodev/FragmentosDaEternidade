@@ -3,12 +3,12 @@ import type { Scene } from "../../../../types/chapter";
 import video1Local from "./Videos/Cap1cena2video1.mp4";
 export const cena2: Scene = {
   id: "chap1-cena2",
-  title: "Em Breve",
+  title: "A resposta do oceano",
   order: 2,
   cutscenes: [
     {
       id: "chap1-cena2-cut1",
-      title: "Continuação em breve",
+      title: "A resposta do oceano",
       order: 1,
       content: `A jornada de Caleb continua em breve...`,
       media: [],
