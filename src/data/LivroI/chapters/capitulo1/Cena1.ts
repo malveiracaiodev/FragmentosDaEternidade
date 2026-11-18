@@ -1,11 +1,11 @@
 import type { Scene } from "../../../../types/chapter";
 import { Unlocks } from "../../../../types/unlocks";
 
-// Importação correta dos vídeos locais baseada na sua pasta
+// Importação exata dos arquivos da pasta
 import videoOlhandoAoRedor from "./Videos/Cap1cena2video1.mp4";
+import videoCena1Video2 from "./Videos/cap1cena1video2.mp4";
 import videoCalebSentando from "./Videos/cap1cena1video3.mp4";
 import videoChamaAzul from "./Videos/cap1cena1video4.mp4";
-import videoExplorandoRuinas from "./Videos/cap1cena1video2.mp4";
 import videoCalebEscalando from "./Videos/Cap1cena3video1.mp4";
 
 export const cena1: Scene = {
@@ -86,7 +86,7 @@ E foi ali que percebeu. Não era uma montanha. Nunca foi. A cidade… havia sido
         {
           id: "explorando-ruinas",
           type: "video",
-          src: videoExplorandoRuinas,
+          src: videoCena1Video2,
         },
         {
           id: "caleb-escalando",
