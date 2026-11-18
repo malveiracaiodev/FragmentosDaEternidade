@@ -1,12 +1,6 @@
 import type { Scene } from "../../../../types/chapter";
 import { Unlocks } from "../../../../types/unlocks";
 
-// Importação dos vídeos locais atualizados da Cena 1
-import video1Cena2Local from "./Videos/cap1cena2video1.mp4";
-import video3Cena1Local from "./Videos/cap1cena1video3.mp4"; // Novo vídeo 3 atualizado
-import video4Cena1Local from "./Videos/cap1cena1video4.mp4"; // Novo vídeo 4 atualizado
-import videoEscalandoLocal from "./Videos/Cap1cena3video1.mp4";
-
 export const cena1: Scene = {
   id: "chap1-cena1",
   title: "O Despertar nas Ruínas",
@@ -52,6 +46,8 @@ Caleb arregalou os olhos, esperando dor… mas ela não veio. Em vez disso, sent
 
 Confuso, ele se levantou com cuidado. Seus olhos voltaram a explorar o lugar. A cidade não tinha saída visível. Ao redor, uma enorme formação rochosa cercava tudo — alta, contínua, sufocante. Parecia uma montanha.
 
+{media:explorando-ruinas}
+
 Sem pensar muito, Caleb caminhou até sua base. Vinhas grossas se estendiam pelas pedras, como se a própria natureza tentasse engolir aquele lugar esquecido. Ele começou a escalar. O esforço era grande, mas algo dentro dele o impulsionava. Como se aquela energia ainda pulsasse em seu corpo.
 
 {media:caleb-escalando}
@@ -68,27 +64,27 @@ E foi ali que percebeu. Não era uma montanha. Nunca foi. A cidade… havia sido
         {
           id: "olhando-ao-redor",
           type: "video",
-          src: video1Cena2Local,
+          src: "https://github.com/malveiracaiodev/Fragmentos-da-eternidade/releases/download/Cap1Videos/cap1cena2video1.mp4",
         },
         {
           id: "caleb-sentando",
           type: "video",
-          src: video3Cena1Local, // Atualizado para o cap1cena1video3
+          src: "https://github.com/malveiracaiodev/Fragmentos-da-eternidade/releases/download/Cap1Videos/cap1cena1video3.mp4",
         },
         {
           id: "chama-azul",
           type: "video",
-          src: video4Cena1Local, // Atualizado para o cap1cena1video4
+          src: "https://github.com/malveiracaiodev/Fragmentos-da-eternidade/releases/download/Cap1Videos/cap1cena1video4.mp4",
         },
         {
           id: "explorando-ruinas",
           type: "video",
-          src: "Videos/cap1cena2video3.mp4", // mantendo ou ajustando se necessário
+          src: "https://github.com/malveiracaiodev/Fragmentos-da-eternidade/releases/download/Cap1Videos/cap1cena2video3.mp4",
         },
         {
           id: "caleb-escalando",
           type: "video",
-          src: videoEscalandoLocal,
+          src: "https://github.com/malveiracaiodev/Fragmentos-da-eternidade/releases/download/Cap1Videos/Cap1cena3video1.mp4",
         },
       ],
       unlocks: {
