@@ -4,12 +4,12 @@ import video1Local from "./Videos/Cap1cena2video1.mp4";
 
 export const cena2: Scene = {
   id: "chap1-cena2",
-  title: "A resposta do oceano",
+  title: "A busca por respostas",
   order: 2,
   cutscenes: [
     {
       id: "chap1-cena2-cut1",
-      title: "A resposta do oceano",
+      title: "A busca por respostas",
       order: 1,
       content: `Voltando-se para a direção contrária às ruínas, Caleb caminhou alguns metros e chegou a uma praia cercada por restos de navios completamente enferrujados, como se estivessem ali há muito tempo. Andou pela areia por alguns minutos. Ainda sem lembranças, sem memórias, sem rumo.
 
