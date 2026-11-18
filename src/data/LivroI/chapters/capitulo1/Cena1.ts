@@ -33,8 +33,6 @@ Seus olhos percorreram o ambiente: construções antigas, quebradas, consumidas 
 
 Ruínas de uma cidade que claramente haviam sido palco de algo grandioso… e destrutivo.
 
-{media:olhando-ao-redor}
-
 Não havia sinais de vida. Nenhum som. Apenas abandono.
 
 Sua mente estava vazia. Nada vinha. Nenhuma memória. Nenhum rosto. Nenhum histórico. Apenas um nome.
