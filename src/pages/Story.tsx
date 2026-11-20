@@ -39,7 +39,7 @@ const ERYON_BOOKS: Book[] = [
                     },
                     { 
                         id: "chap1-cena3", 
-                        title: "Cena 3: A Cidade Afundada", 
+                        title: `Cena 3: ${cena3.title}`,  
                         order: 3, 
                         duration: "Leitura / Vídeo", 
                         isUnlocked: true, 
