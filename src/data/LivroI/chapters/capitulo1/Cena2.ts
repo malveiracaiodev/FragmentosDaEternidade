@@ -29,7 +29,27 @@ Foi então que, através da cortina de chuva no horizonte, ele avistou uma sombr
 
 Apreensivo, Caleb aproximou-se. Não havia sinal de movimento ou vida. Ele prendeu seu veleiro às correntes do grande navio e subiu a bordo.
 
-{media:video-navio-guerra}`,
+{media:video-navio-guerra}
+
+O convés estava completamente abandonado, exceto por uma coisa: um corpo jogado ao chão, próximo ao mastro principal. Caleb caminhou até ali, mas seus olhos travaram no alto. Entalhado no mastro, estava o mesmo símbolo que encontrara nas ferragens da ilha onde acordou.
+
+— Não pode ser coincidência... — resmungou.
+
+Ao se aproximar do corpo ao chão, ele viu um rapaz completamente ensanguentado, com as vestes rasgadas e uma katana empunhada na mão esquerda.
+
+— Só um? — o rapaz disse, tossindo sangue. — Se queriam me matar, deviam ter mandado um esquadrão inteiro.
+
+Ele apontou a lâmina trêmula diretamente para o rosto de Caleb.
+
+— Te matar? Eu nem sei quem você é. E, nessas condições, você não conseguiria enfrentar ninguém — retrucou Caleb, frio.
+
+— Você... não é um deles? — o rapaz perguntou, fazendo um esforço colossal.
+
+— Não sei de quem você está falando, mas se continuar se mexendo, vai morrer — Caleb disse, receoso. — Fique quieto enquanto eu procuro alguma coisa para te ajudar.
+
+Mesmo sem conhecer o estranho, Caleb sentiu uma vontade inexplicável de ajudá-lo. Uma sensação de confiança que ele não sabia explicar.
+
+{media:encontro-conves}`,
       media: [
         {
           id: "olhando-oceano",
@@ -45,6 +65,11 @@ Apreensivo, Caleb aproximou-se. Não havia sinal de movimento ou vida. Ele prend
           id: "video-navio-guerra",
           type: "video",
           src: "https://github.com/malveiracaiodev/FragmentosDaEternidade/releases/download/Cap1Videos/cap1cena2video3.mp4",
+        },
+        {
+          id: "encontro-conves",
+          type: "video",
+          src: "https://github.com/malveiracaiodev/FragmentosDaEternidade/releases/download/Cap1Videos/cap1cena2video4.mp4",
         },
       ],
     },
