@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import type { Book } from "../types/chapter"; // Importação oficial do tipo Book
 import { cena1 } from "../data/LivroI/chapters/capitulo1/Cena1"; // Dados atualizados da Cena 1
 import { cena2 } from "../data/LivroI/chapters/capitulo1/Cena2"; // Dados atualizados da Cena 2
+import { cena3 } from "../data/LivroI/chapters/capitulo1/Cena3"; // Dados atualizados da Cena 3
 import "../styles/story.css";
 
 // Estrutura expandida suportando Livros, Capítulos e Cenas tipada com a interface Book
@@ -38,12 +39,12 @@ const ERYON_BOOKS: Book[] = [
                         cutscenes: cena2.cutscenes 
                     },
                     { 
-                        id: "chap1-cena3", 
+                        id: cena3.id, 
                         title: `Cena 3: ${cena3.title}`,  
-                        order: 3, 
+                        order: cena3.order, 
                         duration: "Leitura / Vídeo", 
                         isUnlocked: true, 
-                        cutscenes: [] 
+                        cutscenes: cena3.cutscenes 
                     },
                 ]
             },
@@ -171,8 +172,8 @@ export default function Story() {
                                                 )}
                                             </div>
                                         );
-                    })}
-                </div>
+                                    })}
+                                </div>
                             )}
                         </div>
                     );
