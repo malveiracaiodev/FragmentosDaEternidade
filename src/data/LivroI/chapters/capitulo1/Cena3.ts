@@ -2,25 +2,68 @@ import type { Scene } from "../../../../types/chapter";
 
 export const cena3: Scene = {
   id: "chap1-cena3",
-  title: "A Cidade Afundada",
+  title: "A resposta do oceano",
   order: 3,
   cutscenes: [
     {
       id: "chap1-cena3-cut1",
-      title: "A Cidade Afundada",
+      title: "A resposta do oceano",
       order: 1,
-      content: `Sem pensar muito, Caleb caminhou até sua base. Vinhas grossas se estendiam pelas pedras, como se a própria natureza tentasse engolir aquele lugar esquecido. Ele começou a escalar. O esforço era grande, mas algo dentro dele o impulsionava. Como se aquela energia ainda pulsasse em seu corpo.
+      content: `Algum tempo depois, Kylo reapareceu vindo do interior do navio, puxando uma pequena caixa com rodas cheia de suprimentos. Seu olhar varria o convés constantemente. Atento. Tenso.
 
+— Precisamos sair daqui — disse ele, direto. — Vamos para o seu veleiro. É menor… e mais seguro.
 
-Após alguns minutos, alcançou o topo. E então… parou. Virou-se lentamente. Seu olhar encontrou a cidade novamente — mas, agora, de cima.
+Caleb franziu levemente a testa. Não questionou, mas percebeu: Kylo não estava com medo do mar. Estava com medo de algo… que podia aparecer a qualquer momento.
 
-E foi ali que percebeu. Não era uma montanha. Nunca foi. A cidade… havia sido empurrada para baixo. Afundada. Como uma cicatriz no mundo.
+Minutos depois, os dois já estavam no veleiro. A tempestade havia passado e o céu começava a se abrir. O mar ainda se agitava levemente, mas agora eles tinham uma direção. Kylo ajustava as velas com precisão, mesmo ainda debilitado.
 
-Voltando-se para a direção contrária às ruínas, Caleb caminhou alguns metros e chegou a uma praia cercada por restos de navios completamente enferrujados, como se estivessem ali há muito tempo. Andou pela areia por alguns minutos. Ainda sem lembranças, sem memórias, sem rumo.
+— Norte — determinou ele.
 
-Em um pedaço de destroço, ele avistou um símbolo coberto por sujeira e ferrugem. Ao limpar a marca e vê-la claramente, uma estranha sensação de agonia e tristeza o atingiu. Ele não sabia o motivo, mas aquele aperto no peito acendeu uma vontade imensa de descobrir o que aquilo significava. Uma necessidade de recuperar sua memória.`,
-      media: [],
-      characters: [],
+— Como você sabe? — perguntou Caleb, observando.
+
+Kylo ergueu o olhar para a lua, que brilhava entre as nuvens.
+
+— Nesse mar… você não confia em mapas. Você aprende a ler o céu… ou morre perdido nele.
+
+{media:rumo-norte-ceu}
+
+Caleb o encarou por um instante, pensativo. O silêncio durou pouco.
+
+— Você achou que eu queria te matar — pontuou Caleb. — Estava esperando alguém?
+
+Kylo não respondeu de imediato. Seus olhos se perderam no horizonte.
+
+— …Eu estava sendo caçado. Eu era um soldado. E traí o governo mundial.
+
+Caleb franziu a testa.
+
+— Governo… mundial?
+
+A confusão em sua voz era genuína. Kylo virou o rosto lentamente, analisando-o com ainda mais atenção.
+
+— Quem é você…? De onde você veio?
+
+Caleb soltou um leve riso sem graça, levando a mão à nuca com um olhar distante.
+
+— Queria saber te responder. Eu acordei… numa cidade em ruínas. Sem memória. Sem passado. Só com um nome: Caleb.
+
+O vento soprou mais forte, esticando as velas. Kylo permaneceu em silêncio por alguns segundos antes de voltar a falar.
+
+— O mundo… não é como deveria ser. Existe um governo que controla tudo: cidades, pessoas, informação… e poder.
+
+{media:revelacao-governo-mundial}`,
+      media: [
+        {
+          id: "rumo-norte-ceu",
+          type: "video",
+          src: "https://github.com/malveiracaiodev/FragmentosDaEternidade/releases/download/Cap1Videos/Cap1cena3video1.mp4",
+        },
+        {
+          id: "revelacao-governo-mundial",
+          type: "video",
+          src: "https://github.com/malveiracaiodev/FragmentosDaEternidade/releases/download/Cap1Videos/Cap1cena3video2.mp4",
+        },
+      ],
     },
   ],
 };
