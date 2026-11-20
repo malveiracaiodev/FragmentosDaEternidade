@@ -73,7 +73,25 @@ O olhar de Caleb percorreu o ambiente até parar em uma mesa central. Sobre ela,
 
 Sem perder mais tempo, Caleb pegou o kit e saiu. Seus passos agora eram mais rápidos, mais firmes. Mas, ao atravessar o corredor de volta, ele teve a estranha sensação de que não estava sozinho. Como se algo o observasse diretamente das sombras. Ele ignorou. Por enquanto.
 
-{media:dormitorio-arsenal-kit}`,
+{media:dormitorio-arsenal-kit}
+
+Ao retornar ao convés, a tempestade ainda rugia violentamente ao redor do navio. O rapaz continuava caído no chão, imóvel, mas consciente. Esperando.
+
+Caleb se aproximou, ajoelhando-se ao lado dele. Sem dizer nada, começou a abrir o kit. Suas mãos se moviam com cuidado, quase que instintivamente, como se já tivesse feito aquilo centenas de vezes, mesmo sem memórias.
+
+O rapaz observava em silêncio, com os olhos semicerrados, mas atentos.
+
+— Engraçado… — murmurou ele, com a voz fraca.
+
+— Você diz que não me conhece… mas suas mãos dizem o contrário.
+
+— …Meu nome é Caleb — disse ele, por fim.
+
+— Kylo… — respondeu, ainda encarando a própria ferida. — Kylo Tsurugi.
+
+Agora, havia algo diferente em sua voz. Não mais desconfiança, mas uma atenção profunda.
+
+{media:kylo-apresentacao}`,
       media: [
         {
           id: "olhando-oceano",
@@ -104,6 +122,11 @@ Sem perder mais tempo, Caleb pegou o kit e saiu. Seus passos agora eram mais rá
           id: "dormitorio-arsenal-kit",
           type: "video",
           src: "https://github.com/malveiracaiodev/FragmentosDaEternidade/releases/download/Cap1Videos/Cap1cena2video6.mp4",
+        },
+        {
+          id: "kylo-apresentacao",
+          type: "video",
+          src: "https://github.com/malveiracaiodev/FragmentosDaEternidade/releases/download/Cap1Videos/Cap1cena2video7.mp4",
         },
       ],
     },
