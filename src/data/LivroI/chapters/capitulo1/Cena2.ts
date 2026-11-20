@@ -61,7 +61,19 @@ Caleb se aproximou. Hesitou por um segundo… e o pegou. Ao tocá-lo, uma sensa�
 
 Ele franziu a testa, confuso, mas não tinha tempo a perder. Guardou o livro junto ao corpo e continuou.
 
-{media:interior-livro}`,
+{media:interior-livro}
+
+A primeira porta se abriu com facilidade: um dormitório. Oito camas alinhadas com precisão militar. Lençóis esticados. Nenhuma marca de uso recente, nenhum sinal de pressa. Tudo perfeito demais. Caleb caminhou entre elas, observando. Nada. Nenhum remédio, nenhuma pista. Aquela organização impecável começava a incomodá-lo.
+
+Ele saiu e parou diante da segunda porta. Dessa vez, hesitou. Algo ali dentro parecia diferente. Mais pesado. Mesmo sem entender o porquê, seu corpo reagia àquela atmosfera.
+
+Ainda assim, ele a abriu. O impacto foi imediato: Armas. De todos os tipos. Espadas, lanças, lâminas curtas… todas polidas, afiadas, prontas para o combate. Dispostas com um cuidado cirúrgico, como se cada uma tivesse seu lugar exato. Ferramentas de manutenção estavam espalhadas ao redor, também organizadas. Aquilo não era um simples navio mercantil. Era um arsenal.
+
+O olhar de Caleb percorreu o ambiente até parar em uma mesa central. Sobre ela, repousava uma pequena caixa marcada com um símbolo medicinal conhecido. Ele se aproximou rapidamente e a abriu. Bandagens, frascos e instrumentos básicos. Um kit de primeiros socorros.
+
+Sem perder mais tempo, Caleb pegou o kit e saiu. Seus passos agora eram mais rápidos, mais firmes. Mas, ao atravessar o corredor de volta, ele teve a estranha sensação de que não estava sozinho. Como se algo o observasse diretamente das sombras. Ele ignorou. Por enquanto.
+
+{media:dormitorio-arsenal-kit}`,
       media: [
         {
           id: "olhando-oceano",
@@ -87,6 +99,11 @@ Ele franziu a testa, confuso, mas não tinha tempo a perder. Guardou o livro jun
           id: "interior-livro",
           type: "video",
           src: "https://github.com/malveiracaiodev/FragmentosDaEternidade/releases/download/Cap1Videos/Cap1cena2video5.mp4",
+        },
+        {
+          id: "dormitorio-arsenal-kit",
+          type: "video",
+          src: "https://github.com/malveiracaiodev/FragmentosDaEternidade/releases/download/Cap1Videos/Cap1cena2video6.mp4",
         },
       ],
     },
