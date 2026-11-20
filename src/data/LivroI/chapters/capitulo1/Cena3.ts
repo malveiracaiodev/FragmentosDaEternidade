@@ -51,7 +51,19 @@ O vento soprou mais forte, esticando as velas. Kylo permaneceu em silêncio por 
 
 — O mundo… não é como deveria ser. Existe um governo que controla tudo: cidades, pessoas, informação… e poder.
 
-{media:revelacao-governo-mundial}`,
+{media:revelacao-governo-mundial}
+
+Qualquer coisa que fuja do normal, qualquer energia ou habilidade… é proibida. Pessoas como você… são caçadas.
+
+O clima mudou, tornando-se mais pesado, mais real.
+
+— Primeiro, eles tentam recrutar. Dizem que é “para manter a ordem”. Se você aceita, vira uma ferramenta. Se recusa… vira um alvo.
+
+Caleb fechou levemente a mão. As chamas azuis surgiram por um único segundo e desapareceram. Kylo respirou fundo.
+
+— Eu não concordei com isso. O mundo não precisa de controle absoluto; precisa de escolha. Se alguém nasce com um poder como o seu… então tem o direito de usá-lo.
+
+{media:proibicao-e-chamas}`,
       media: [
         {
           id: "rumo-norte-ceu",
@@ -62,6 +74,11 @@ O vento soprou mais forte, esticando as velas. Kylo permaneceu em silêncio por 
           id: "revelacao-governo-mundial",
           type: "video",
           src: "https://github.com/malveiracaiodev/FragmentosDaEternidade/releases/download/Cap1Videos/Cap1cena3video2.mp4",
+        },
+        {
+          id: "proibicao-e-chamas",
+          type: "video",
+          src: "https://github.com/malveiracaiodev/FragmentosDaEternidade/releases/download/Cap1Videos/Cap1cena3video3.mp4",
         },
       ],
     },
