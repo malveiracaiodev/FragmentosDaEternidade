@@ -49,7 +49,19 @@ Ele apontou a lâmina trêmula diretamente para o rosto de Caleb.
 
 Mesmo sem conhecer o estranho, Caleb sentiu uma vontade inexplicável de ajudá-lo. Uma sensação de confiança que ele não sabia explicar.
 
-{media:encontro-conves}`,
+{media:encontro-conves}
+
+A porta cedeu com um rangido baixo. Caleb entrou. O contraste foi imediato.
+
+Se do lado de fora o navio parecia abandonado e morto… ali dentro tudo estava em ordem. Limpo. Organizado de forma quase obsessiva. Como se alguém ainda cuidasse daquele lugar. Ou tivesse cuidado… até pouco tempo atrás.
+
+Ele avançou devagar, os olhos atentos a cada detalhe. Uma estante ocupava parte da parede, repleta de livros perfeitamente alinhados. Nenhum fora do lugar. Nenhum coberto de poeira. Exceto um. Um único livro destoava de todo o resto. Velho. Surrado. Desgastado pelo tempo.
+
+Caleb se aproximou. Hesitou por um segundo… e o pegou. Ao tocá-lo, uma sensação estranha percorreu seu corpo. Não era dor, nem calor. Era… familiaridade. Como se aquilo tivesse alguma ligação com o seu passado.
+
+Ele franziu a testa, confuso, mas não tinha tempo a perder. Guardou o livro junto ao corpo e continuou.
+
+{media:interior-livro}`,
       media: [
         {
           id: "olhando-oceano",
@@ -70,6 +82,11 @@ Mesmo sem conhecer o estranho, Caleb sentiu uma vontade inexplicável de ajudá-
           id: "encontro-conves",
           type: "video",
           src: "https://github.com/malveiracaiodev/FragmentosDaEternidade/releases/download/Cap1Videos/cap1cena2video4.mp4",
+        },
+        {
+          id: "interior-livro",
+          type: "video",
+          src: "https://github.com/malveiracaiodev/FragmentosDaEternidade/releases/download/Cap1Videos/Cap1cena2video5.mp4",
         },
       ],
     },
